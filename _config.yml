@@ -133,6 +133,6 @@ color_scheme: light
 #################################################################
 
 # Plugins
-plugins:
+# # plugins:
   # # - jekyll-redirect-from (DISABILITATO SOLAMENTE TEMPORAMENTE)
   # # - jekyll-last-modified-at
