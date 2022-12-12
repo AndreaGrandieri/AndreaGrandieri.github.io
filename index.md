@@ -54,3 +54,14 @@ search_exclude: false
 
 <!-- Content of the page -->
 Prova.
+
+<!-- Bottone di prova per lo switch a dark mode -->
+<!-- Define a button with javascript incorporated -->
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<!-- Define the javascript function -->
+<script>
+function toggleDarkMode() {
+  jtd.setTheme("dark")
+}
+</script>
