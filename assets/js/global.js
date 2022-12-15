@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+//                                                             //
+//                                                             //
+// Andrea Grandieri andreagrandieri.github.io                  //
+//                                                             //
+//                                                             //
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
 // Function to switch between light and dark mode
 // The function should be called with a button
 function toggleDarkMode() {
@@ -10,11 +20,12 @@ function toggleDarkMode() {
       toggleDarkMode.theme = "light"
     }
 
-    console.log(toggleDarkMode.theme)
-
     if (toggleDarkMode.theme == "light") {
+      // Change button with id "lighdarkSwitcherButton" text
+      document.getElementById("lightdarkSwitcherButton").innerHTML = "Toggle Light Mode"
       toggleDarkMode.theme = "dark"
     } else {
+      document.getElementById("lightdarkSwitcherButton").innerHTML = "Toggle Dark Mode"
       toggleDarkMode.theme = "light"
     }
 
