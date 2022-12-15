@@ -59,4 +59,4 @@ Prova.
 <!-- Define a button with javascript incorporated -->
 <!-- Import javascript file: "global.js" -->
 <script type="module" src="/assets/js/global.js"></script>
-<button id="lighdarkSwitcherButton" type="button" name="button" class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+<button onclick="toggleDarkMode()" id="lighdarkSwitcherButton" type="button" name="button" class="btn">Toggle Dark Mode</button>
