@@ -62,6 +62,15 @@ Prova.
 <!-- Define the javascript function -->
 <script>
 function toggleDarkMode() {
-  jtd.setTheme("dark")
+  // If theme is dark, switch to light
+  var theme = "light"
+
+  if (theme == "light") {
+    theme = "dark"
+  } else {
+    theme = "light"
+  }
+
+  jtd.setTheme(theme)
 }
 </script>
