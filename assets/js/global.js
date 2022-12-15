@@ -10,6 +10,8 @@ function toggleDarkMode() {
       toggleDarkMode.theme = "light"
     }
 
+    console.log(toggleDarkMode.theme)
+
     if (theme == "light") {
       theme = "dark"
     } else {
