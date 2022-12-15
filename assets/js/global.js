@@ -4,13 +4,17 @@ function toggleDarkMode() {
     // If theme is dark, switch to light
     // If theme is light, switch to dark
     // Default theme is "light"
-    var theme = "light"
-  
+
+    // Using "javascript static variable" way of declaration
+    if (typeof toggleDarkMode.theme === 'undefined') {
+      toggleDarkMode.theme = "light"
+    }
+
     if (theme == "light") {
       theme = "dark"
     } else {
       theme = "light"
     }
-  
+
     jtd.setTheme(theme)
 }
