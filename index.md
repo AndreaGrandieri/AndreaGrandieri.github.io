@@ -57,7 +57,7 @@ Prova.
 
 <!-- Bottone di prova per lo switch a dark mode -->
 <!-- Define a button with javascript incorporated -->
-<button type="button" name="button" class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+<button type="button" name="button" class="btn" onclick=toggleDarkMode()>Toggle Dark Mode</button>
 
 <!-- Define the javascript function -->
 <script>
