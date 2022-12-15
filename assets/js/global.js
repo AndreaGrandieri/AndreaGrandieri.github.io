@@ -12,11 +12,11 @@ function toggleDarkMode() {
 
     console.log(toggleDarkMode.theme)
 
-    if (theme == "light") {
-      theme = "dark"
+    if (toggleDarkMode.theme == "light") {
+      toggleDarkMode.theme = "dark"
     } else {
-      theme = "light"
+      toggleDarkMode.theme = "light"
     }
 
-    jtd.setTheme(theme)
+    jtd.setTheme(toggleDarkMode.theme)
 }
