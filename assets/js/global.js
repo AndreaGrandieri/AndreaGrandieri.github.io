@@ -10,7 +10,7 @@
 
 // Function to switch between light and dark mode
 // The function should be called with a button
-window.onload = function toggleDarkMode() {
+export function toggleDarkMode() {
     // If theme is dark, switch to light
     // If theme is light, switch to dark
     // Default theme is "light"
