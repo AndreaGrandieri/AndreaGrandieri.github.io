@@ -8,6 +8,8 @@
 /////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
 
+// This is a module. The globalThis export is used.
+
 // Function to switch between light and dark mode
 // The function should be called with a button
 function toggleDarkMode() {

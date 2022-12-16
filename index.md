@@ -55,8 +55,5 @@ search_exclude: false
 <!-- Content of the page -->
 Prova.
 
-<!-- Bottone di prova per lo switch a dark mode -->
-<!-- Define a button with javascript incorporated -->
-<!-- Import javascript file: "global.js" -->
-<script type="module" src="/assets/js/global.js"></script>
+<!-- Button to switch from dark mode to light mode and viceversa -->
 <button id="lightdarkSwitcherButton" type="button" name="button" class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
