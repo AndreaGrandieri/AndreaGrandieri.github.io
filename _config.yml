@@ -60,9 +60,9 @@ search:
 # AUX LINKS
 # Aux links are placed in the upper right corner of the site and are essentially simple links
 # Aux links for the upper right navigation
-# # aux_links:
-# #   "FRASE":
-# #     - "URL"
+aux_links:
+  "<button><object data=\"/assets/fa-solid_fa-moon.svg\"></object></button>":"
+    - "#"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
