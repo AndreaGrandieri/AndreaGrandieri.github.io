@@ -1,0 +1,5 @@
+.fa-moon:before {
+    content: "\f186"; }
+
+.fad.fa-moon:after {
+    content: "\10f186"; }
