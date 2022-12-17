@@ -59,42 +59,43 @@ function toggleDarkMode() {
     themeModeSwitcher.theme = "dark"
     jtd.setTheme(themeModeSwitcher.theme)
   }
-  globalThis.toggleDarkMode = toggleDarkMode
+}
+globalThis.toggleDarkMode = toggleDarkMode
 
-  function toggleLightMode() {
-    document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
+function toggleLightMode() {
+  document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
 
-    // Checks if the "sessionStorage" object is supported by the browser
-    if (typeof (Storage) !== "undefined") {
-      sessionStorage.theme = "light"
-      jtd.setTheme(sessionStorage.theme)
-    } else {
-      // Continuity won't work
-      themeModeSwitcher.theme = "light"
-      jtd.setTheme(themeModeSwitcher.theme)
-    }
+  // Checks if the "sessionStorage" object is supported by the browser
+  if (typeof (Storage) !== "undefined") {
+    sessionStorage.theme = "light"
+    jtd.setTheme(sessionStorage.theme)
+  } else {
+    // Continuity won't work
+    themeModeSwitcher.theme = "light"
+    jtd.setTheme(themeModeSwitcher.theme)
   }
-  globalThis.toggleLightMode = toggleLightMode
+}
+globalThis.toggleLightMode = toggleLightMode
 
-  function retrieveTheme() {
-    // Checks if the "sessionStorage" object is supported by the browser
-    if (typeof (Storage) !== "undefined") {
-      if (sessionStorage.theme) {
-        if (sessionStorage.theme == "light") {
-          toggleLightMode()
-        } else {
-          toggleDarkMode()
-        }
-      }
-    } else {
-      // Continuity won't work
-      if (themeModeSwitcher.theme !== "undefined") {
-        if (themeModeSwitcher.theme == "light") {
-          toggleLightMode()
-        } else {
-          toggleDarkMode()
-        }
+function retrieveTheme() {
+  // Checks if the "sessionStorage" object is supported by the browser
+  if (typeof (Storage) !== "undefined") {
+    if (sessionStorage.theme) {
+      if (sessionStorage.theme == "light") {
+        toggleLightMode()
+      } else {
+        toggleDarkMode()
       }
     }
+  } else {
+    // Continuity won't work
+    if (themeModeSwitcher.theme !== "undefined") {
+      if (themeModeSwitcher.theme == "light") {
+        toggleLightMode()
+      } else {
+        toggleDarkMode()
+      }
+    }
   }
-  globalThis.retrieveTheme = retrieveTheme
+}
+globalThis.retrieveTheme = retrieveTheme
