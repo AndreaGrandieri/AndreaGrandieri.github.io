@@ -5,7 +5,7 @@ layout: alwaysnaviffamily
 
 # Page title
 # If omitted, the page will not be included in the navbar
-title: Index
+title: Projects
 
 # Specifies the order of the current page from the point of view of the navbar
 # Can have repetition in the numbers, for parent-child hierarchies
@@ -15,10 +15,10 @@ nav_order: 1
 nav_exclude: false
 
 # If this page represents the parent page of a section that, therefore, has children, specify it in the following way
-has_children: true
+has_children: false
 
 # If this page represents the child page of a section that, therefore, has ONE parent page, specify it in the following way
-# # parent: Namespace
+parent: Index
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
 has_toc: true
@@ -34,8 +34,7 @@ has_toc: true
 search_exclude: false
 ---
 
-# Index
-<!-- Do not add to the table of contents -->
+# Projects
 {: .no_toc }
 
 ---
@@ -53,5 +52,4 @@ search_exclude: false
 ---
 
 <!-- Content of the page -->
-Prova.
-
+Prova nella pagina "Projects".
