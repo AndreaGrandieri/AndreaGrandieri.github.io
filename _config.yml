@@ -61,8 +61,8 @@ search:
 # Aux links are placed in the upper right corner of the site and are essentially simple links
 # Aux links for the upper right navigation
 aux_links:
-  "<i class=\"fas fa-moon fa-3x\"></i>":
-    - "javascript:toggleDarkMode(0);"
+  "<i class=\"fa-solid fa-moon fa-3x\"></i>":
+    - "javascript:void(0);"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
