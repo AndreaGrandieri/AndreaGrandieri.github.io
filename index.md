@@ -35,7 +35,8 @@ search_exclude: false
 ---
 
 # Index
-{: .no_toc } <!-- Do not add to the table of contents -->
+{: .no_toc }
+<!-- Do not add to the table of contents -->
 
 ---
 
