@@ -50,9 +50,9 @@ globalThis.toggleLightMode = toggleLightMode
 function retrieveTheme() {
   if (sessionStorage.theme) {
     if (sessionStorage.theme == "light") {
-      toggleDarkMode()
-    } else {
       toggleLightMode()
+    } else {
+      toggleDarkMode()
     }
   }
 }
