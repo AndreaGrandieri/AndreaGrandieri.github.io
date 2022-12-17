@@ -42,7 +42,7 @@ search_exclude: false
 <!-- Table of contents -->
 <details open markdown="block">
   <summary>
-      Table of contents
+    Table of contents
   </summary>
   {: .text-delta }
 1. TOC
