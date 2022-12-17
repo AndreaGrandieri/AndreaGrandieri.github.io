@@ -20,12 +20,12 @@ function themeModeSwitcher() {
 
   if (sessionStorage.theme) {
     if (sessionStorage.theme == "light") {
-      toggleLightMode()
-    } else {
       toggleDarkMode()
+    } else {
+      toggleLightMode()
     }
   } else {
-    sessionStorage.theme = "light"
+    sessionStorage.theme = "dark"
     toggleLightMode()
   }
 }
