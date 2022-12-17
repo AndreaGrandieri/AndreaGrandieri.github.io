@@ -46,3 +46,14 @@ function toggleLightMode() {
   jtd.setTheme(sessionStorage.theme)
 }
 globalThis.toggleLightMode = toggleLightMode
+
+function retrieveTheme() {
+  if (sessionStorage.theme) {
+    if (sessionStorage.theme == "light") {
+      toggleDarkMode()
+    } else {
+      toggleLightMode()
+    }
+  }
+}
+globalThis.retrieveTheme = retrieveTheme
