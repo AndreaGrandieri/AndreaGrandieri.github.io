@@ -53,8 +53,8 @@ function toggleDarkMode() {
     localStorage.theme = "dark"
     jtd.setTheme(localStorage.theme)
   } else {
-    toggleDarkMode.theme = "dark"
-    jtd.setTheme(toggleDarkMode.theme)
+    themeModeSwitcher.theme = "dark"
+    jtd.setTheme(themeModeSwitcher.theme)
   }
 }
 globalThis.toggleDarkMode = toggleDarkMode
@@ -67,8 +67,8 @@ function toggleLightMode() {
     localStorage.theme = "light"
     jtd.setTheme(localStorage.theme)
   } else {
-    toggleDarkMode.theme = "light"
-    jtd.setTheme(toggleDarkMode.theme)
+    themeModeSwitcher.theme = "light"
+    jtd.setTheme(themeModeSwitcher.theme)
   }
 }
 globalThis.toggleLightMode = toggleLightMode
