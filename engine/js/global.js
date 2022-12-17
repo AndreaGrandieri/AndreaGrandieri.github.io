@@ -25,8 +25,8 @@ function themeModeSwitcher() {
       toggleLightMode()
     }
   } else {
-    sessionStorage.theme = "dark"
-    toggleLightMode()
+    sessionStorage.theme = "light"
+    toggleDarkMode()
   }
 }
 globalThis.themeModeSwitcher = themeModeSwitcher
