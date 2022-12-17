@@ -5,7 +5,8 @@
   <!-- Importing javascript "global.js" file -->
   <script type="module" src="/engine/js/global.js"></script>
 
-  <!-- Call function "themeModeSwitcher" -->
+  <!-- Retrive the theme asap to reduce the chance of flickering of the screen (sudden switch from light to dark) -->
+  <!-- Call function "retrieveTheme" -->
   <script type="module">
     retrieveTheme();
   </script>

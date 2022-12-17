@@ -63,6 +63,8 @@ search:
 aux_links:
   "<div id=\"lightdarkSwitcherButton\"><i class=\"fa-solid fa-moon fa-3x\"></i></div>":
     - "javascript:themeModeSwitcher();"
+  "<i class=\"fa-brands fa-github fa-3x\"></i>":
+    - "https://github.com/AndreaGrandieri"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
