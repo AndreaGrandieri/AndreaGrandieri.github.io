@@ -62,7 +62,7 @@ search:
 # Aux links for the upper right navigation
 aux_links:
   "<i class=\"fa-solid fa-moon fa-3x\"></i>":
-    - "javascript:void(0);"
+    - "javascript:toggleDarkMode();"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
