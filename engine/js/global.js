@@ -12,44 +12,59 @@
 
 // Function to switch between light and dark mode
 // The function should be called with a button
-function toggleDarkMode() {
+function themeModeSwitcher() {
   // If theme is dark, switch to light
   // If theme is light, switch to dark
   // Default theme is "light"
+  // It implements the continuity of the theme between pages
 
   // Tries with localStorage first
   if (typeof (Storage) !== "undefined") {
     // Using "javascript static variable" way of declaration
     if (typeof localStorage.theme === 'undefined') {
-      localStorage.theme = "light"
-    }
-
-    if (localStorage.theme == "light") {
-      // Change button with id "lighdarkSwitcherButton" text
-      document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-sun fa-3x\"></i>"
-      localStorage.theme = "dark"
+      toggleLightMode()
     } else {
-      document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
-      localStorage.theme = "light"
+      if (localStorage.theme == "light") {
+        toggleLightMode()
+      } else {
+        toggleDarkMode()
+      }
     }
-
-    jtd.setTheme(localStorage.theme)
   } else {
     // Using "javascript static variable" way of declaration
-    if (typeof toggleDarkMode.theme === 'undefined') {
-      toggleDarkMode.theme = "light"
-    }
-
-    if (toggleDarkMode.theme == "light") {
-      // Change button with id "lighdarkSwitcherButton" text
-      document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-sun fa-3x\"></i>"
-      toggleDarkMode.theme = "dark"
+    if (typeof themeModeSwitcher.theme === 'undefined') {
+      toggleLightMode()
     } else {
-      document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
-      toggleDarkMode.theme = "light"
+      if (themeModeSwitcher.theme == "light") {
+        toggleLightMode()
+      } else {
+        toggleDarkMode()
+      }
     }
+  }
+}
+globalThis.themeModeSwitcher = themeModeSwitcher
 
-    jtd.setTheme(toggleDarkMode.theme)
+function toggleDarkMode() {
+  document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-sun fa-3x\"></i>"
+
+  // Tries with localStorage first
+  if (typeof (Storage) !== "undefined") {
+    localStorage.theme = "dark"
+  } else {
+    toggleDarkMode.theme = "dark"
   }
 }
 globalThis.toggleDarkMode = toggleDarkMode
+
+function toggleLightMode() {
+  document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
+
+  // Tries with localStorage first
+  if (typeof (Storage) !== "undefined") {
+    localStorage.theme = "light"
+  } else {
+    toggleDarkMode.theme = "light"
+  }
+}
+globalThis.toggleLightMode = toggleLightMode
