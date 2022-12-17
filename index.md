@@ -55,5 +55,3 @@ search_exclude: false
 <!-- Content of the page -->
 Prova.
 
-<!-- Button to switch from dark mode to light mode and viceversa -->
-<button id="lightdarkSwitcherButton" type="button" name="button" class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>

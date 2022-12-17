@@ -24,10 +24,10 @@ function toggleDarkMode() {
 
     if (toggleDarkMode.theme == "light") {
       // Change button with id "lighdarkSwitcherButton" text
-      document.getElementById("lightdarkSwitcherButton").innerHTML = "Toggle Light Mode"
+      document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-sun fa-3x\"></i>"
       toggleDarkMode.theme = "dark"
     } else {
-      document.getElementById("lightdarkSwitcherButton").innerHTML = "Toggle Dark Mode"
+      document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
       toggleDarkMode.theme = "light"
     }
 
