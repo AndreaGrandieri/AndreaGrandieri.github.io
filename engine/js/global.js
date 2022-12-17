@@ -16,31 +16,17 @@ function themeModeSwitcher() {
   // If theme is dark, switch to light
   // If theme is light, switch to dark
   // Default theme is "light"
-  // It implements the continuity of the theme between pages
+  // It implements the continuity of the theme between pages, using sessionStorage
 
-  // Tries with localStorage first
-  if (typeof (Storage) !== "undefined") {
-    // Using "javascript static variable" way of declaration
-    if (typeof localStorage.theme === 'undefined') {
+  if (sessionStorage.theme) {
+    if (sessionStorage.theme == "light") {
       toggleLightMode()
     } else {
-      if (localStorage.theme == "light") {
-        toggleLightMode()
-      } else {
-        toggleDarkMode()
-      }
+      toggleDarkMode()
     }
   } else {
-    // Using "javascript static variable" way of declaration
-    if (typeof themeModeSwitcher.theme === 'undefined') {
-      toggleLightMode()
-    } else {
-      if (themeModeSwitcher.theme == "light") {
-        toggleLightMode()
-      } else {
-        toggleDarkMode()
-      }
-    }
+    sessionStorage.theme = "light"
+    toggleLightMode()
   }
 }
 globalThis.themeModeSwitcher = themeModeSwitcher
@@ -48,27 +34,15 @@ globalThis.themeModeSwitcher = themeModeSwitcher
 function toggleDarkMode() {
   document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-sun fa-3x\"></i>"
 
-  // Tries with localStorage first
-  if (typeof (Storage) !== "undefined") {
-    localStorage.theme = "dark"
-    jtd.setTheme(localStorage.theme)
-  } else {
-    themeModeSwitcher.theme = "dark"
-    jtd.setTheme(themeModeSwitcher.theme)
-  }
+  sessionStorage.theme = "dark"
+  jtd.setTheme(sessionStorage.theme)
 }
 globalThis.toggleDarkMode = toggleDarkMode
 
 function toggleLightMode() {
   document.getElementById("lightdarkSwitcherButton").innerHTML = "<i class=\"fa-solid fa-moon fa-3x\"></i>"
 
-  // Tries with localStorage first
-  if (typeof (Storage) !== "undefined") {
-    localStorage.theme = "light"
-    jtd.setTheme(localStorage.theme)
-  } else {
-    themeModeSwitcher.theme = "light"
-    jtd.setTheme(themeModeSwitcher.theme)
-  }
+  sessionStorage.theme = "light"
+  jtd.setTheme(sessionStorage.theme)
 }
 globalThis.toggleLightMode = toggleLightMode
