@@ -35,8 +35,7 @@ search_exclude: false
 ---
 
 # Index
-<!-- Do not add to the table of contents -->
-{: .no_toc }
+{: .no_toc } <!-- Do not add to the table of contents -->
 
 ---
 
@@ -54,4 +53,3 @@ search_exclude: false
 
 <!-- Content of the page -->
 Prova.
-
