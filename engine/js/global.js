@@ -51,8 +51,10 @@ function toggleDarkMode() {
   // Tries with localStorage first
   if (typeof (Storage) !== "undefined") {
     localStorage.theme = "dark"
+    jtd.setTheme(localStorage.theme)
   } else {
     toggleDarkMode.theme = "dark"
+    jtd.setTheme(toggleDarkMode.theme)
   }
 }
 globalThis.toggleDarkMode = toggleDarkMode
@@ -63,8 +65,10 @@ function toggleLightMode() {
   // Tries with localStorage first
   if (typeof (Storage) !== "undefined") {
     localStorage.theme = "light"
+    jtd.setTheme(localStorage.theme)
   } else {
     toggleDarkMode.theme = "light"
+    jtd.setTheme(toggleDarkMode.theme)
   }
 }
 globalThis.toggleLightMode = toggleLightMode
