@@ -51,5 +51,43 @@ search_exclude: false
 
 ---
 
-<!-- Content of the page -->
-Prova nella pagina "Projects".
+## MagicMirror-GBM
+
+Pass.
+
+---
+
+## RadioSvegliaGBE
+
+Pass.
+
+---
+
+## DirectDownloadLink-Onedrive
+
+Pass.
+
+---
+
+## MMM-MD
+
+Pass.
+
+---
+
+## EEPROM-Programmer
+
+Pass.
+
+---
+
+## Comuni-Italia
+
+Pass.
+
+---
+
+## Progetto Gelateria BBG
+
+Pass.
+
