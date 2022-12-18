@@ -64,12 +64,12 @@ search:
 # Links as: "javascript:***" are not compatible with the "aux_links_new_tab" option set to true
 aux_links:
   "<i class=\"fa-brands fa-github fa-3x\"></i>":
-    - "<a href=\"https://github.com/AndreaGrandieri\" target=\"_blank\"></a>"
-  "<div id=\"lightdarkSwitcherButton\"><i class=\"fa-solid fa-moon fa-3x\"></i></div>":
-    - "javascript:themeModeSwitcher();"
+    - "https://github.com/AndreaGrandieri"
+  # # "<div id=\"lightdarkSwitcherButton\"><i class=\"fa-solid fa-moon fa-3x\"></i></div>":
+  # #   - "javascript:themeModeSwitcher();"
 
 # Makes Aux links open in a new tab. Default is false
-aux_links_new_tab: false
+aux_links_new_tab: true
 
 #################################################################
 
