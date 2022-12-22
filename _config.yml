@@ -140,3 +140,8 @@ color_scheme: light
 # # plugins:
   # # - jekyll-redirect-from (DISABILITATO SOLAMENTE TEMPORAMENTE)
   # # - jekyll-last-modified-at
+  
+callouts:
+  motto:
+    title: Motto
+    color: blue
