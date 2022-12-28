@@ -1,0 +1,33 @@
+@import "./color_schemes/light";
+
+.fa-file-zipper {
+    color: $purple-000; 
+}
+
+.fa-file-pdf {
+    color: $purple-000;     
+}
+
+.fa-php {
+    color: $purple-000;   
+}
+
+.fa-markdown {
+    color: $purple-000; 
+}
+
+.fa-database {
+    color: $purple-000; 
+}
+
+/*******************************/
+
+// For some still undefined reason that's not working
+// Update: yep it works, it just needs to be tagged: "!important"
+// // .bg-purple-epic-custom01 {
+// //     background-color: #342D7E;
+// // }
+
+.bg-purple-epic-custom01 {
+    background-color: #342D7E !important;
+}
