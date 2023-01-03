@@ -1,7 +1,7 @@
 ---
 # Specifies the "filament" HTML page to be used. The HTML page must be located in the "_layouts" folder.
 # (should always be this)
-layout: alwaysnaviffamily
+layout: default
 
 # Page title
 # If omitted, the page will not be included in the navbar
@@ -53,7 +53,12 @@ search_exclude: false
 
 ## MagicMirror-GBM
 
-Pass.
+{: .motto-title } 
+> <p class="blockquote-title-fixer-purple">tl;dr</p>
+>
+> Piattaforma Open Source modulare per trasformare un classico specchio in un sistema digitale multifunzione ad interazione passiva, dove l'immaginazione è l'unico limite.
+
+[Vai al sito del progetto](https://andreagrandieri.github.io/MagicMirror-GBM/) {: .btn }
 
 ---
 
@@ -90,4 +95,3 @@ Pass.
 ## Progetto Gelateria BBG
 
 Pass.
-
