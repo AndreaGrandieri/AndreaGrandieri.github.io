@@ -58,7 +58,7 @@ search_exclude: false
 >
 > Piattaforma Open Source modulare per trasformare un classico specchio in un sistema digitale multifunzione ad interazione passiva, dove l'immaginazione è l'unico limite.
 
-[Vai al sito del progetto](https://andreagrandieri.github.io/MagicMirror-GBM/) {: .btn }
+[Vai al sito del progetto](https://andreagrandieri.github.io/MagicMirror-GBM/){: .btn }
 
 ---
 
