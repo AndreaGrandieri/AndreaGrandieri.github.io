@@ -56,4 +56,4 @@ search_exclude: false
 
 Completa lista dei progetti pubblici.
 
-- [Projects](Projects)
+- [Projects](pages/Projects)
