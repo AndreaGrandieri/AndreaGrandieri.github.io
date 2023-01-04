@@ -5,11 +5,11 @@ layout: default
 
 # Page title
 # If omitted, the page will not be included in the navbar
-title: Projects
+title: grn::deploy::webstatic
 
 # Specifies the order of the current page from the point of view of the navbar
 # Can have repetition in the numbers, for parent-child hierarchies
-nav_order: 1
+nav_order: 2
 
 # Let exclude the page from the navbar
 nav_exclude: false
@@ -18,23 +18,23 @@ nav_exclude: false
 has_children: false
 
 # If this page represents the child page of a section that, therefore, has ONE parent page, specify it in the following way
-parent: Index
+# # parent: PrivateStorage
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
-has_toc: true
+has_toc: false
 
 # If a child page has more children, add again
 # # has_children: true
 
 # To the children page(s) add
-# # parent: NOME_PAGINA_GENITORE
-# # grand_parent: NOME_PAGINA_NONNO__GENITORE_DEL_GENITORE
+parent: Projects
+grand_parent: Index
 
 # Let exclude the page from the search engine (client-side)
 search_exclude: false
 ---
 
-# Projects
+# grn::deploy::webstatic
 {: .no_toc }
 
 ---
@@ -51,58 +51,18 @@ search_exclude: false
 
 ---
 
-## MagicMirror-GBM
-
-{: .motto-title } 
-> <p class="blockquote-title-fixer-purple">tl;dr</p>
->
-> Piattaforma Open Source modulare per trasformare un classico specchio in un sistema digitale multifunzione ad interazione passiva, dove l'immaginazione è l'unico limite.
-
-[Vai al sito del progetto](https://andreagrandieri.github.io/MagicMirror-GBM/){: .btn }
-
----
-
-## grn::deploy::webstatic
-
 {: .motto-title } 
 > <p class="blockquote-title-fixer-purple">tl;dr</p>
 >
 > Motore semplice ed intuitivo di deploy di siti web statici.
 
-[Vai alla risorsa](grn-deploy-webstatic){: .btn }
+---
+
+## In breve
+
+L'intero ecosistema di siti web statici forniti nel dominio `andreagrandieri.github.io` si basa sul motore `grn::deploy::webstatic`.
+Questo motore implementa un sistema semplice ed intuitivo di deploy di siti web statici.
 
 ---
 
-## RadioSvegliaGBE
-
-Pass.
-
----
-
-## DirectDownloadLink-Onedrive
-
-Pass.
-
----
-
-## MMM-MD
-
-Pass.
-
----
-
-## EEPROM-Programmer
-
-Pass.
-
----
-
-## Comuni-Italia
-
-Pass.
-
----
-
-## Progetto Gelateria BBG
-
-Pass.
+La documentazione e l'implementazione non sono pubblici.

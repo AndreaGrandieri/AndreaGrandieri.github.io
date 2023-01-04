@@ -5,7 +5,7 @@ layout: default
 
 # Page title
 # If omitted, the page will not be included in the navbar
-title: Projects
+title: MagicMirror-GBM
 
 # Specifies the order of the current page from the point of view of the navbar
 # Can have repetition in the numbers, for parent-child hierarchies
@@ -15,16 +15,16 @@ nav_order: 1
 nav_exclude: false
 
 # If this page represents the parent page of a section that, therefore, has children, specify it in the following way
-has_children: false
+has_children: true
 
 # If this page represents the child page of a section that, therefore, has ONE parent page, specify it in the following way
-parent: Index
+parent: Projects
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
-has_toc: true
+has_toc: false
 
 # If a child page has more children, add again
-# # has_children: true
+has_children: true
 
 # To the children page(s) add
 # # parent: NOME_PAGINA_GENITORE
@@ -32,77 +32,10 @@ has_toc: true
 
 # Let exclude the page from the search engine (client-side)
 search_exclude: false
+
+# Bare: redirect page
+redirect_to:
+    - /Projects#magicmirror-gbm
 ---
 
-# Projects
-{: .no_toc }
-
----
-
-<!-- Table of contents -->
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
----
-
-## MagicMirror-GBM
-
-{: .motto-title } 
-> <p class="blockquote-title-fixer-purple">tl;dr</p>
->
-> Piattaforma Open Source modulare per trasformare un classico specchio in un sistema digitale multifunzione ad interazione passiva, dove l'immaginazione è l'unico limite.
-
-[Vai al sito del progetto](https://andreagrandieri.github.io/MagicMirror-GBM/){: .btn }
-
----
-
-## grn::deploy::webstatic
-
-{: .motto-title } 
-> <p class="blockquote-title-fixer-purple">tl;dr</p>
->
-> Motore semplice ed intuitivo di deploy di siti web statici.
-
-[Vai alla risorsa](grn-deploy-webstatic){: .btn }
-
----
-
-## RadioSvegliaGBE
-
-Pass.
-
----
-
-## DirectDownloadLink-Onedrive
-
-Pass.
-
----
-
-## MMM-MD
-
-Pass.
-
----
-
-## EEPROM-Programmer
-
-Pass.
-
----
-
-## Comuni-Italia
-
-Pass.
-
----
-
-## Progetto Gelateria BBG
-
-Pass.
+<!-- Bare Page -->
