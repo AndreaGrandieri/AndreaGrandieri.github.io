@@ -18,7 +18,7 @@ nav_exclude: false
 has_children: true
 
 # If this page represents the child page of a section that, therefore, has ONE parent page, specify it in the following way
-parent: Projects
+# # parent: Projects
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
 has_toc: false
@@ -27,8 +27,8 @@ has_toc: false
 has_children: true
 
 # To the children page(s) add
-# # parent: NOME_PAGINA_GENITORE
-# # grand_parent: NOME_PAGINA_NONNO__GENITORE_DEL_GENITORE
+parent: Projects
+grand_parent: Index
 
 # Let exclude the page from the search engine (client-side)
 search_exclude: false
