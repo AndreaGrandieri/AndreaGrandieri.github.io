@@ -9,7 +9,7 @@ title: grn::deploy::webstatic
 
 # Specifies the order of the current page from the point of view of the navbar
 # Can have repetition in the numbers, for parent-child hierarchies
-nav_order: 2
+nav_order: 1
 
 # Let exclude the page from the navbar
 nav_exclude: false
@@ -18,7 +18,7 @@ nav_exclude: false
 has_children: false
 
 # If this page represents the child page of a section that, therefore, has ONE parent page, specify it in the following way
-# # parent: PrivateStorage
+parent: Index
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
 has_toc: false
@@ -27,8 +27,8 @@ has_toc: false
 # # has_children: true
 
 # To the children page(s) add
-parent: Projects
-grand_parent: Index
+# # parent: Projects
+# # grand_parent: Index
 
 # Let exclude the page from the search engine (client-side)
 search_exclude: false

@@ -57,3 +57,14 @@ search_exclude: false
 Completa lista dei progetti pubblici.
 
 - [Projects](pages/Projects)
+
+---
+
+## grn::deploy::webstatic
+
+{: .motto-title } 
+> <p class="blockquote-title-fixer-purple">tl;dr</p>
+>
+> Motore semplice ed intuitivo di deploy di siti web statici.
+
+[Vai alla risorsa](pages/grn-deploy-webstatic){: .btn }

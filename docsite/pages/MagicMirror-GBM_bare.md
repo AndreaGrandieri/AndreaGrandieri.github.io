@@ -35,7 +35,7 @@ search_exclude: false
 
 # Bare: redirect page
 redirect_to:
-    - /Projects#magicmirror-gbm
+    - /pages/Projects#magicmirror-gbm
 ---
 
 <!-- Bare Page -->

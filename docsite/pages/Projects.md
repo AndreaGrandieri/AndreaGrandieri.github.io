@@ -62,17 +62,6 @@ search_exclude: false
 
 ---
 
-## grn::deploy::webstatic
-
-{: .motto-title } 
-> <p class="blockquote-title-fixer-purple">tl;dr</p>
->
-> Motore semplice ed intuitivo di deploy di siti web statici.
-
-[Vai alla risorsa](grn-deploy-webstatic){: .btn }
-
----
-
 ## RadioSvegliaGBE
 
 Pass.
