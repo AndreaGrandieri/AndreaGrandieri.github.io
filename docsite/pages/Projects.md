@@ -21,7 +21,7 @@ has_children: true
 parent: Index
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
-has_toc: true
+has_toc: false
 
 # If a child page has more children, add again
 # # has_children: true
