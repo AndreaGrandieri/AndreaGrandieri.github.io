@@ -53,6 +53,9 @@ search_exclude: false
 
 ## MagicMirror-GBM
 
+END
+{: .label .label-end-color }
+
 {: .motto-title } 
 > <p class="blockquote-title-fixer-purple">tl;dr</p>
 >
@@ -64,11 +67,17 @@ search_exclude: false
 
 ## RadioSvegliaGBE
 
+MISSING
+{: .label .label-missing-color }
+
 Pass.
 
 ---
 
 ## DirectDownloadLink-Onedrive
+
+MISSING
+{: .label .label-missing-color }
 
 Pass.
 
@@ -76,11 +85,17 @@ Pass.
 
 ## MMM-MD
 
+MISSING
+{: .label .label-missing-color }
+
 Pass.
 
 ---
 
 ## EEPROM-Programmer
+
+MISSING
+{: .label .label-missing-color }
 
 Pass.
 
@@ -88,10 +103,16 @@ Pass.
 
 ## Comuni-Italia
 
+MISSING
+{: .label .label-missing-color }
+
 Pass.
 
 ---
 
 ## Progetto Gelateria BBG
+
+MISSING
+{: .label .label-missing-color }
 
 Pass.
