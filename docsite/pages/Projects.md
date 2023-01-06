@@ -52,7 +52,6 @@ search_exclude: false
 ---
 
 ## MagicMirror-GBM
-
 END
 {: .label .label-end-color }
 
