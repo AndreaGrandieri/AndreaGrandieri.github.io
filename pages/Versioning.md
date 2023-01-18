@@ -87,8 +87,7 @@ Esatto. Personalmente non ritengo necessario tracciarle, in quanto questo produr
 
 ## Repository pre-protocollo di versioning
 
-Queste repository partono dalla versione: `VERSION: Z` per convenzione. Questa versione verrà così specificata:
-{: .d-inline-block }
+Queste repository partono dalla versione: `VERSION: Z` per convenzione. Questa versione verrà così specificata: {: .d-inline-block }
 
 Version: Z (pre-versioning protocol)
 {: .label .label-blue }
