@@ -68,3 +68,17 @@ Completa lista dei progetti pubblici.
 > Motore semplice ed intuitivo di deploy di siti web statici.
 
 [Vai alla risorsa](pages/grn-deploy-webstatic){: .btn }
+
+---
+
+## Legenda delle labels
+
+Tutte le pagine web sotto il dominio `andreagrandieri.github.io` seguono una precisa legenda per l'uso delle __labels__.
+
+Un esempio di label:
+{: .d-inline-block }
+
+LABEL
+{: .label }
+
+[Vai alla risorsa](pages/legenda-labels){: .btn }
