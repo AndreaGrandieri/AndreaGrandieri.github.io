@@ -56,7 +56,7 @@ search_exclude: false
 
 Completa lista dei progetti pubblici.
 
-- [Projects](pages/Projects)
+[Vai alla risorsa](pages/Projects){: .btn }
 
 ---
 
