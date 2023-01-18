@@ -71,7 +71,7 @@ L'avanzo di versioni non segue alcuna forte regola. Vengono seguite queste osser
 - Avanza di versione quando ritieni di aver rimosso una importante / sostanzionsa feature
 - Avanza di versione quando ritieni di aver rivoluzionato il funzionamento di base del tuo progetto / risorsa
 - Avanza di versione ogni qualvolta ritieni piuttosto notevole denotare il distacco dalla versione precedente
-<br>
+<br><br>
 - Non avanzare di versione quando applichi solo modifiche marginali
 - Non avanzare di versione quando non vi è necessità effettiva di distaccarsi dalla attuale versione
 
