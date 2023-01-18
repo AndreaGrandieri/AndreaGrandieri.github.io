@@ -36,6 +36,10 @@ search_exclude: false
 
 # grn::deploy::webstatic
 {: .no_toc }
+{: .d-inline-block }
+
+STABLE
+{: .label .label-green }
 
 ---
 
@@ -62,6 +66,38 @@ search_exclude: false
 
 L'intero ecosistema di siti web statici forniti nel dominio `andreagrandieri.github.io` si basa sul motore `grn::deploy::webstatic`.
 Questo motore implementa un sistema semplice ed intuitivo di deploy di siti web statici.
+
+---
+
+## Componenti
+
+Di seguito i componenti del motore:
+
+### RepoLink
+{: .d-inline-block }
+
+STABLE
+{: .label .label-green }
+{: .d-inline-block }
+
+Version: B
+{: .label .label-blue }
+
+`RepoLink` è il componente che si occupa di effettuare l'armonizzazione del branch principale (solitamente: main) con il branch dedicato al sito (branch: site), il merge di assets `common` e `personal`, di richiamare eventuali altri script specificati e di pushare i risultati verso le rispettive repository `Git`; questo permette, in un solo click, essenzialmente di fornire siti web statici pronti per essere pubblicati.
+
+---
+
+### Jekyll-Build-N-Push
+{: .d-inline-block }
+
+STABLE
+{: .label .label-green }
+{: .d-inline-block }
+
+Version: B
+{: .label .label-blue }
+
+`Jekyll-Build-N-Push` è lo script che si occupa di compilare un sito web statico Jekyll localmente, prelevare il corrispettivo output (cartella: `_site`) e caricarlo nel rispettivo server (solitamente non su `GitHub`), il quale servirà questo output. Questo script è solitamente invocato da `RepoLink`, anche se è indipendente e può essere invocato a se stante.
 
 ---
 
