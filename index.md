@@ -81,4 +81,4 @@ Un esempio di label:
 LABEL
 {: .label }
 
-[Vai alla risorsa](pages/legenda-labels){: .btn }
+[Vai alla risorsa](pages/Legenda-labels){: .btn }

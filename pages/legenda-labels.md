@@ -74,7 +74,7 @@ RELAXED
 {: .label .label-relax-color }
 
 - __Label__: `RELAXED`
-- __Significato__: _una via di mezzo tra `STABLE` e `END`_: indica che il progetto / risorsa si trova nel suo stadio finale di development: tutto ciò previsto è stato implementato, funziona e si è fiduciosi che non sono previsti futuri aggiornamenti _prosperosi_. Solitamente, `RELAXED` viene attribuito a quelle repository contenenti codice "Legacy", ovvero codice oramai esistente, creato, utilizzato e da cui dipendono numerose altre repository e che _non si ha più necessità e nè "voglia"_ di modificare. Essenzialmente è come `END`, ma con ___improbabile__ senza __molto___.
+- __Significato__: _una via di mezzo tra `STABLE` e `END`_: indica che il progetto / risorsa si trova nel suo stadio finale di development: tutto ciò previsto è stato implementato, funziona e si è fiduciosi che non sono previsti futuri aggiornamenti _prosperosi_. Solitamente, `RELAXED` viene attribuito a quelle repository contenenti codice "Legacy", ovvero codice oramai esistente, creato, utilizzato e da cui dipendono numerose altre repository e che _non si ha più necessità e nè "voglia"_ di modificare. Essenzialmente è come `END`, ma con ___improbabile senza molto___.
 - __Antecede__: `END`
 
 ---
@@ -112,7 +112,7 @@ VERSION: <version>
 - __Label__: `VERSION`
 - __Significato__: indica la versione.
 
-_Vedi sezione su `Versioning` per maggiori informazioni.
+Vedi sezione su `Versioning` per maggiori informazioni.
 
 ---
 ---
@@ -122,8 +122,12 @@ _Vedi sezione su `Versioning` per maggiori informazioni.
 LABEL
 {: .label }
 
+<br>
+
 LABEL
 {: .label .label-purple }
+
+<br>
 
 LABEL
 {: .label .label-yellow }
