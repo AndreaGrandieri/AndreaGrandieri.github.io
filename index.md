@@ -82,3 +82,11 @@ LABEL
 {: .label }
 
 [Vai alla risorsa](pages/Legenda-labels){: .btn }
+
+---
+
+## Versioning
+
+Protocollo di versioning adottato dalle repository sotto il dominio `andreagrandieri.github.io`.
+
+[Vai alla risorsa](pages/Versioning){: .btn }
