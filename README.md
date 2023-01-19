@@ -3,16 +3,6 @@
 
 ---
 
-<!-- Table of contents -->
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  1. TOC
-</details>
-
----
-
 ## Projects
 
 Completa lista dei progetti pubblici.
