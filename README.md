@@ -18,16 +18,17 @@
 Completa lista dei progetti pubblici.
 
 [Vai alla risorsa](https://andreagrandieri.github.io/pages/Projects)
+
 ---
 
 ## grn::deploy::webstatic
 
- 
 > <p class="blockquote-title-fixer-purple">tl;dr</p>
 >
 > Motore semplice ed intuitivo di deploy di siti web statici.
 
 [Vai alla risorsa](https://andreagrandieri.github.io/pages/grn-deploy-webstatic)
+
 ---
 
 ## Legenda delle labels
@@ -39,6 +40,7 @@ Un esempio di label:
 LABEL
 
 [Vai alla risorsa](https://andreagrandieri.github.io/pages/Legenda-labels)
+
 ---
 
 ## Versioning
