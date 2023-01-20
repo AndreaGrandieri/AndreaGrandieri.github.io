@@ -97,7 +97,21 @@ STABLE
 Version: B
 {: .label .label-blue }
 
-`Jekyll-Build-N-Push` è lo script che si occupa di compilare un sito web statico Jekyll localmente, prelevare il corrispettivo output (cartella: `_site`) e caricarlo nel rispettivo server (solitamente non su `GitHub`), il quale servirà questo output. Questo script è solitamente invocato da `RepoLink`, anche se è indipendente e può essere invocato a se stante.
+`Jekyll-Build-N-Push` è il componente che si occupa di compilare un sito web statico Jekyll localmente, prelevare il corrispettivo output (cartella: `_site`) e caricarlo nel rispettivo server (solitamente non su `GitHub`), il quale servirà questo output. Questo script è solitamente invocato da `RepoLink`, anche se è indipendente e può essere invocato a se stante.
+
+---
+
+### Adapter
+{: .d-inline-block }
+
+STABLE
+{: .label .label-green }
+{: .d-inline-block }
+
+Version: A
+{: .label .label-blue }
+
+`Adapter` è il componente che si occupa di adattare un dato file `.md` per visualizzarlo correttamente su `GitHub`, dato che `GitHub` ha un visualizzatore (cioè un render) di file `.md` incorporato. Il processo di adattamento prevede la rimozione di componenti dedicati al motore Jekyll, che, quindi, non verrebbero correttamente gestiti dal render di `GitHub`.
 
 ---
 
