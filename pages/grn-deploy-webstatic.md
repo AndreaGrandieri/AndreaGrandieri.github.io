@@ -55,7 +55,7 @@ STABLE
 
 ---
 
-{: .motto-title } 
+{: .motto-title }
 > <p class="blockquote-title-fixer-purple">tl;dr</p>
 >
 > Motore semplice ed intuitivo di deploy di siti web statici.
@@ -111,7 +111,7 @@ STABLE
 Version: A
 {: .label .label-blue }
 
-`Adapter` è il componente che si occupa di adattare un dato file `.md` per visualizzarlo correttamente su `GitHub`, dato che `GitHub` ha un visualizzatore (cioè un render) di file `.md` incorporato. Il processo di adattamento prevede la rimozione di componenti dedicati al motore Jekyll, che, quindi, non verrebbero correttamente gestiti dal render di `GitHub`.
+`Adapter` è il componente che si occupa di adattare un dato file `.md` per visualizzarlo correttamente su `GitHub`, dato che `GitHub` ha un visualizzatore (cioè un render) di file `.md` incorporato. Il processo di adattamento prevede la rimozione di componenti dedicati al motore Jekyll, che non verrebbero correttamente gestiti dal render di `GitHub`.
 
 ---
 
