@@ -81,7 +81,7 @@ Un esempio di label:
 <div id="label-1"></div>
 
 <script type="module">
-  fill_labels_state("label-1");
+  selfsustainable_fill_labels_state("label-1");
 </script>
 
 [Vai alla risorsa](pages/Legenda-labels){: .btn }

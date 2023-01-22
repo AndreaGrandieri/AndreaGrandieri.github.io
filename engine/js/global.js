@@ -471,4 +471,10 @@ function fill_labels_state(id) {
   
   document.getElementById(id).innerHTML = htmlContent;
 }
-globalThis.fill_labels_state = fill_labels_state;
+
+function selfsustainable_fill_labels_state(id) {
+  queryCDN_map_labels_states();
+  queryCDN_labels_states();
+  fill_labels_state(id);
+}
+globalThis.selfsustainable_fill_labels_state = selfsustainable_fill_labels_state;
