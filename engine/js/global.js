@@ -339,11 +339,11 @@ function queryCDN(url, callback) {
         if (xhr.readyState == 4) {
             var data = JSON.parse(xhr.responseText);
             callback(data);
+
+            resolve();
         }
     };
     xhr.send();  
-
-    resolve();
   });
 }
 
