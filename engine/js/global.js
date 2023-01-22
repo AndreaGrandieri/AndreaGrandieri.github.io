@@ -475,8 +475,8 @@ function fill_labels_state(id) {
 
   // Iterate over the elements with the given "id"
   for (var i = 0; i < elms.length; i++) {
-    // Inject the "htmlContent" in the element
-    elms[i].innerHTML = htmlContent;
+    // Inject the "htmlContent" beforebegin the "<div></div>" element. The "<div></div>" will remain empty, but that's not a problem.
+    elms[i].insertAdjacentHTML('beforebegin', htmlContent);
   }
 }
 
