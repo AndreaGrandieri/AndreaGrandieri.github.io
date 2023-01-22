@@ -327,6 +327,8 @@ globalThis.disambiguationPageTestCompatibility = disambiguationPageTestCompatibi
 
 // Lo scopo di questa funzione è quello di interrogare l'url specificato e, se la risposta è valida, chiamare la funzione callback con la risposta come parametro. La funzione non sarà pubblica "globalThis.queryCDN = queryCDN;" per questioni di sicurezza.
 function queryCDN(url, callback) {
+  console.log("Querying the CDN at the URL " + url + "...");
+
   // Query the CDN at the given URL. Expect the URL to point to a JSON file.
   // When the query is complete, call the callback function with the JSON
   // object as the argument.
@@ -345,6 +347,8 @@ var labels_states_map = null;
 
 // Compiles the "labels_states_map" variable
 function queryCDN_map_labels_states() {
+  console.log("Querying the CDN for the labels_states_map.json file...");
+
   if (labels_states_map != null || labels_states_map != undefined) {
     // Querying the CDN is not necessary
     return;
@@ -370,6 +374,8 @@ var labels_states = null;
 
 // Compiles the "labels_states" variable
 function queryCDN_labels_states() {
+  console.log("queryCDN_labels_states");
+
   if (labels_states != null || labels_states != undefined) {
     // Querying the CDN is not necessary
     return;
@@ -392,6 +398,8 @@ globalThis.queryCDN_labels_states = queryCDN_labels_states;
 
 // Map the "labels_states" variable to the "labels_states_map" variable
 function mapStateToHTMLContent_labels(state) {
+  console.log("mapStateToHTMLContent_labels() called");
+
   // Check if the "labels_states_map" variable is null or undefined
   if (labels_states_map == null || labels_states_map == undefined) {
     // The CDN with the required informations should have alredy been queried. Thus, there's something wrong. Filling won't be performed.
@@ -421,6 +429,8 @@ function mapStateToHTMLContent_labels(state) {
 
 // Given the "id" of a "<div></div>", it will inject in that "<div></div>" the corresponding label with its textual content. To be called foreach label with "<script></script>" in the HTML (aka: MD) file.
 function fill_labels_state(id) {
+  console.log("fill_labels_state() called with id: " + id);
+
   // Check if the "labels_states_map" variable and the variable "labels_states" is null or undefined
   if (labels_states_map == null || labels_states_map == undefined || labels_states == null || labels_states == undefined) {
     // The CDN with the required informations should have alredy been queried. Thus, there's something wrong. Filling won't be performed.
@@ -441,8 +451,11 @@ function fill_labels_state(id) {
   }
   */
 
-  // Retrive the "state" from the "labels_states"
-  var state = labels_states.labels[id].state;
+  // Retrive the "state" from the "labels_states" variable based on the "id" parameter
+  var state = labels_states.labels.find(function (element) {
+    return element.id == id;
+  }
+  ).state;
 
   // Retrive the "htmlContent" from the "labels_states_map" variable based on the "state" parameter
   var htmlContent = mapStateToHTMLContent_labels(state);
