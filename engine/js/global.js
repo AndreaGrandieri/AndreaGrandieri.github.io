@@ -347,12 +347,12 @@ var labels_states_map = null;
 
 // Compiles the "labels_states_map" variable
 function queryCDN_map_labels_states() {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     console.log("Querying the CDN for the labels_states_map.json file...");
 
     if (labels_states_map != null || labels_states_map != undefined) {
       // Querying the CDN is not necessary
-      return;
+      resolve();
     }
   
     // Hard definition of the URL
@@ -367,6 +367,8 @@ function queryCDN_map_labels_states() {
   
     // Query the CDN
     queryCDN(url, callback); 
+
+    resolve();
   });
 }
 globalThis.queryCDN_map_labels_states = queryCDN_map_labels_states;
@@ -376,12 +378,12 @@ var labels_states = null;
 
 // Compiles the "labels_states" variable
 function queryCDN_labels_states() {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     console.log("queryCDN_labels_states");
 
     if (labels_states != null || labels_states != undefined) {
       // Querying the CDN is not necessary
-      return;
+      resolve();
     }
   
     // Hard definition of the URL
@@ -396,6 +398,8 @@ function queryCDN_labels_states() {
   
     // Query the CDN
     queryCDN(url, callback);
+
+    resolve();
   });
 }
 globalThis.queryCDN_labels_states = queryCDN_labels_states;
