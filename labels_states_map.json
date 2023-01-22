@@ -1,44 +1,44 @@
 {
-    "labels": [
-        {
-            "state": "END",
-            "htmlContent": "<p class='label label-end-color'></p>"
-        },
-        {
-            "state": "STABLE",
-            "htmlContent": "<p class='label label-green'></p>"
-        },
-        {
-            "state": "RELAXED",
-            "htmlContent": "<p class='label label-relax-color'></p>"
-        },
-        {
-            "state": "ARCHIVED",
-            "htmlContent": "<p class='label label-archived-color'></p>"
-        },
-        {
-            "state": "DEPRECATED",
-            "htmlContent": "<p class='label label-red'></p>"
-        },
-        {
-            "state": "MISSING",
-            "htmlContent": "<p class='label label-missing-color'></p>"
-        },
-        {
-            "state": "VERSION",
-            "htmlContent": "<p class='label label-blue'></p>"
-        },
-        {
-            "state": "GENERIC-1",
-            "htmlContent": "<p class='label'></p>"
-        },
-        {
-            "state": "GENERIC-2",
-            "htmlContent": "<p class='label label-purple'></p>"
-        },
-        {
-            "state": "GENERIC-3",
-            "htmlContent": "<p class='label label-yellow'></p>"
-        }
-    ]
+  "labels": [
+    {
+      "state": "END",
+      "htmlContent": "<p class='label label-end-color'></p>"
+    },
+    {
+      "state": "STABLE",
+      "htmlContent": "<p class='label label-green'></p>"
+    },
+    {
+      "state": "RELAXED",
+      "htmlContent": "<p class='label label-relax-color'></p>"
+    },
+    {
+      "state": "ARCHIVED",
+      "htmlContent": "<p class='label label-archived-color'></p>"
+    },
+    {
+      "state": "DEPRECATED",
+      "htmlContent": "<p class='label label-red'></p>"
+    },
+    {
+      "state": "MISSING",
+      "htmlContent": "<p class='label label-missing-color'></p>"
+    },
+    {
+      "state": "VERSION",
+      "htmlContent": "<p class='label label-blue'></p>"
+    },
+    {
+      "state": "GENERIC-1",
+      "htmlContent": "<p class='label'></p>"
+    },
+    {
+      "state": "GENERIC-2",
+      "htmlContent": "<p class='label label-purple'></p>"
+    },
+    {
+      "state": "GENERIC-3",
+      "htmlContent": "<p class='label label-yellow'></p>"
+    }
+  ]
 }
