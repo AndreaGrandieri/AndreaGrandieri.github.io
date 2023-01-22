@@ -80,11 +80,11 @@ Di seguito i componenti del motore:
 {: .d-inline-block }
 
 <div id="label-3"></div>
+{: .d-inline-block }
 
 <script type="module">
   selfsustainable_fill_labels_state("label-3");
 </script>
-{: .d-inline-block }
 
 <div id="label-4"></div>
 
@@ -100,11 +100,11 @@ Di seguito i componenti del motore:
 {: .d-inline-block }
 
 <div id="label-5"></div>
+{: .d-inline-block }
 
 <script type="module">
   selfsustainable_fill_labels_state("label-5");
 </script>
-{: .d-inline-block }
 
 <div id="label-6"></div>
 
@@ -120,11 +120,11 @@ Di seguito i componenti del motore:
 {: .d-inline-block }
 
 <div id="label-7"></div>
+{: .d-inline-block }
 
 <script type="module">
   selfsustainable_fill_labels_state("label-7");
 </script>
-{: .d-inline-block }
 
 <div id="label-8"></div>
 
