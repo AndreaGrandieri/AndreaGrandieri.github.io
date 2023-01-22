@@ -93,3 +93,9 @@ Un esempio di label:
 Protocollo di versioning adottato dalle repository sotto il dominio `andreagrandieri.github.io`.
 
 [Vai alla risorsa](pages/Versioning){: .btn }
+
+<div id="label-1"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-1");
+</script>
