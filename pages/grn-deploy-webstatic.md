@@ -38,8 +38,11 @@ search_exclude: false
 {: .no_toc }
 {: .d-inline-block }
 
-STABLE
-{: .label .label-green }
+<div id="label-2"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-2");
+</script>
 
 ---
 
@@ -76,12 +79,18 @@ Di seguito i componenti del motore:
 ### RepoLink
 {: .d-inline-block }
 
-STABLE
-{: .label .label-green }
+<div id="label-3"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-3");
+</script>
 {: .d-inline-block }
 
-Version: B
-{: .label .label-blue }
+<div id="label-4"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-4");
+</script>
 
 `RepoLink` è il componente che si occupa di effettuare l'armonizzazione del branch principale (solitamente: main) con il branch dedicato al sito (branch: site), il merge di assets `common` e `personal`, di richiamare eventuali altri script specificati e di pushare i risultati verso le rispettive repository `Git`; questo permette, in un solo click, essenzialmente di fornire siti web statici pronti per essere pubblicati.
 
@@ -90,12 +99,18 @@ Version: B
 ### Jekyll-Build-N-Push
 {: .d-inline-block }
 
-STABLE
-{: .label .label-green }
+<div id="label-5"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-5");
+</script>
 {: .d-inline-block }
 
-Version: B
-{: .label .label-blue }
+<div id="label-6"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-6");
+</script>
 
 `Jekyll-Build-N-Push` è il componente che si occupa di compilare un sito web statico Jekyll localmente, prelevare il corrispettivo output (cartella: `_site`) e caricarlo nel rispettivo server (solitamente non su `GitHub`), il quale servirà questo output. Questo script è solitamente invocato da `RepoLink`, anche se è indipendente e può essere invocato a se stante.
 
@@ -104,12 +119,18 @@ Version: B
 ### Adapter
 {: .d-inline-block }
 
-STABLE
-{: .label .label-green }
+<div id="label-7"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-7");
+</script>
 {: .d-inline-block }
 
-Version: A
-{: .label .label-blue }
+<div id="label-8"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("label-8");
+</script>
 
 `Adapter` è il componente che si occupa di adattare un dato file `.md` per visualizzarlo correttamente su `GitHub`, dato che `GitHub` ha un visualizzatore (cioè un render) di file `.md` incorporato. Il processo di adattamento prevede la rimozione di componenti dedicati al motore Jekyll, che non verrebbero correttamente gestiti dal render di `GitHub`.
 
