@@ -30,6 +30,10 @@ var mappingDictionaryForLanguages = {
   "it": "Italiano"
 }
 
+// These cannot rever to "null" or "undefined" once they are set. This is critical to ensure safety!
+var glob_cdnProfile_map_labels_states = null;
+var glob_cdnProfile_labels_states = null;
+
 // Function to switch between light and dark mode
 // The function should be called within a button
 function themeModeSwitcher() {
@@ -359,9 +363,7 @@ function queryCDN_map_labels_states() {
       resolve();
     }
   
-    // Hard definition of the URL
-    // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json"
-    var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json";
+    var url = glob_cdnProfile_map_labels_states;
   
     // Callback
     function callback(response) {
@@ -390,9 +392,7 @@ function queryCDN_labels_states() {
       resolve();
     }
   
-    // Hard definition of the URL
-    // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json"
-    var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json";
+    var url = glob_cdnProfile_labels_states;
   
     // Callback
     function callback(response) {
@@ -496,3 +496,21 @@ async function selfsustainable_fill_labels_state(id) {
   fill_labels_state(id);
 }
 globalThis.selfsustainable_fill_labels_state = selfsustainable_fill_labels_state;
+
+/*
+SAFERY ENSURANCE: make sure you, the website owner, have called this function at least once specifying any valid or invalid (e.g: "") string for the parameters: "cdnProfile_map_labels_states" and "cdnProfile_labels_states: this way, anyone calling this functio won't be able to redefine the CDN profiles: this is critical, otherwise malicious URLs could be injected in the website! I repeat: do call this function even if you don't have in plan to use the CDN profiles: pass invalid (e.g: "") strings as parameters. My suggestion is to call this function in the "head_custom.html" file. Note: "selfsustainable_fill_labels_state" won't work if this function is not called at least once.
+*/
+function setCDNProfiles(cdnProfile_map_labels_states, cdnProfile_labels_states) {
+  /* SAFERY ENSURANCE: Once an assignment has been made, it is irreversible. */
+
+  if (glob_cdnProfile_map_labels_states == null || glob_cdnProfile_map_labels_states == undefined) {
+    // Assign the CDN profile
+    glob_cdnProfile_map_labels_states = cdnProfile_map_labels_states;
+  }
+
+  if (glob_cdnProfile_labels_states == null || glob_cdnProfile_labels_states == undefined) {
+    // Assign the CDN profile
+    glob_cdnProfile_labels_states = cdnProfile_labels_states;
+  }
+}
+globalThis.setCDNProfiles = setCDNProfiles;
