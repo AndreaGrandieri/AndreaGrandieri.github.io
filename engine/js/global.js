@@ -463,8 +463,14 @@ function fill_labels_state(id) {
   // Inject HTML
   var toInject = "";
 
+  // Retrive the "content" from the "labels_states" variable based on the "id" parameter
+  var content = labels_states.labels.find(function (element) {
+    return element.id == id;
+  }
+  ).content;
+
   // Append "content" (from the "labels_states" variable) to the "toInject" variable
-  toInject += labels_states.labels[id].content + "\n";
+  toInject += content + "\n";
 
   // Append "htmlContent" (from the "labels_states_map" variable) to the "toInject" variable
   toInject += htmlContent;
