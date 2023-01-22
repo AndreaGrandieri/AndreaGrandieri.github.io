@@ -481,7 +481,13 @@ function fill_labels_state(id) {
   // The "htmlContent" is of type: "<p 'some other stuff'></p>": put the "content" inside the "<p 'some other stuff'></p>"
   htmlContent = htmlContent.replace("></p>", ">" + content + "</p>");
   
-  document.getElementById(id).innerHTML = htmlContent;
+  var elms = document.querySelectorAll(`[id=${id}]`);
+
+  // Iterate over the elements with the given "id"
+  for (var i = 0; i < elms.length; i++) {
+    // Inject the "htmlContent" in the element
+    elms[i].innerHTML = htmlContent;
+  }
 }
 
 async function selfsustainable_fill_labels_state(id) {
