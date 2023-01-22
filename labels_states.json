@@ -1,9 +1,10 @@
 {
-    "entries": [
+    "labels": [
         {
-            "id": "1",
-            "description": "",
-            "labelData": ""
+            "id": "label-1",
+            "description": "index.md di 'andreagrandieri.github.io'",
+            "state": "GENERIC-1",
+            "content": "LABEL"
         }
     ]
 }
