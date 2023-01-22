@@ -2,43 +2,43 @@
     "labels": [
         {
             "state": "END",
-            "htmlContent": "{: .label .label-end-color }"
+            "htmlContent": "<p class='label label-end-color'></p>"
         },
         {
             "state": "STABLE",
-            "htmlContent": "{: .label .label-green }"
+            "htmlContent": "<p class='label label-green'></p>"
         },
         {
             "state": "RELAXED",
-            "htmlContent": "{: .label .label-relax-color }"
+            "htmlContent": "<p class='label label-relax-color'></p>"
         },
         {
             "state": "ARCHIVED",
-            "htmlContent": "{: .label .label-archived-color }"
+            "htmlContent": "<p class='label label-archived-color'></p>"
         },
         {
             "state": "DEPRECATED",
-            "htmlContent": "{: .label .label-red }"
+            "htmlContent": "<p class='label label-red'></p>"
         },
         {
             "state": "MISSING",
-            "htmlContent": "{: .label .label-missing-color }"
+            "htmlContent": "<p class='label label-missing-color'></p>"
         },
         {
             "state": "VERSION",
-            "htmlContent": "{: .label .label-blue }"
+            "htmlContent": "<p class='label label-blue'></p>"
         },
         {
             "state": "GENERIC-1",
-            "htmlContent": "{: .label }"
+            "htmlContent": "<p class='label'></p>"
         },
         {
             "state": "GENERIC-2",
-            "htmlContent": "{: .label .label-purple }"
+            "htmlContent": "<p class='label label-purple'></p>"
         },
         {
             "state": "GENERIC-3",
-            "htmlContent": "{: .label .label-yellow }"
+            "htmlContent": "<p class='label label-yellow'></p>"
         }
     ]
 }
