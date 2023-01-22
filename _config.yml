@@ -92,9 +92,9 @@ heading_anchors: true
 # It appears at the bottom of every page's main content
 # Define the footer content in the _includes/footer_custom.html file
 
-# Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
+# Back to top link: DEPRECATED
+# # back_to_top: true
+# # back_to_top_text: "Back to top"
 
 # Footer "Edit this page on GitHub" link text
 # For some still undefined reasons (at least to me) this must be "true" for the "back to top link" to work
