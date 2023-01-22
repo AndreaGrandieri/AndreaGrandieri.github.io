@@ -327,27 +327,31 @@ globalThis.disambiguationPageTestCompatibility = disambiguationPageTestCompatibi
 
 // Lo scopo di questa funzione è quello di interrogare l'url specificato e, se la risposta è valida, chiamare la funzione callback con la risposta come parametro. La funzione non sarà pubblica "globalThis.queryCDN = queryCDN;" per questioni di sicurezza.
 function queryCDN(url, callback) {
-  console.log("Querying the CDN at the URL " + url + "...");
+  return new Promise((resolve, reject) => {
+    console.log("Querying the CDN at the URL " + url + "...");
 
-  // Query the CDN at the given URL. Expect the URL to point to a JSON file.
-  // When the query is complete, call the callback function with the JSON
-  // object as the argument.
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", url, true);
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4) {
-          var data = JSON.parse(xhr.responseText);
-          callback(data);
-      }
-  };
-  xhr.send();
+    // Query the CDN at the given URL. Expect the URL to point to a JSON file.
+    // When the query is complete, call the callback function with the JSON
+    // object as the argument.
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var data = JSON.parse(xhr.responseText);
+            callback(data);
+        }
+    };
+    xhr.send();  
+
+    resolve();
+  });
 }
 
 var labels_states_map = null;
 
 // Compiles the "labels_states_map" variable
 function queryCDN_map_labels_states() {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     console.log("Querying the CDN for the labels_states_map.json file...");
 
     if (labels_states_map != null || labels_states_map != undefined) {
@@ -366,7 +370,7 @@ function queryCDN_map_labels_states() {
     }
   
     // Query the CDN
-    queryCDN(url, callback); 
+    await queryCDN(url, callback); 
 
     resolve();
   });
@@ -378,7 +382,7 @@ var labels_states = null;
 
 // Compiles the "labels_states" variable
 function queryCDN_labels_states() {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     console.log("queryCDN_labels_states");
 
     if (labels_states != null || labels_states != undefined) {
@@ -397,7 +401,7 @@ function queryCDN_labels_states() {
     }
   
     // Query the CDN
-    queryCDN(url, callback);
+    await queryCDN(url, callback);
 
     resolve();
   });
