@@ -3,18 +3,32 @@
 //                                                             //
 //                                                             //
 // Andrea Grandieri andreagrandieri.github.io                  //
+// Copiloted by Copilot@GitHub                                 //
 //                                                             //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
+
+// FARE CHIAREZZA TRA FUNZIONI PUBBLICHE E FUNZIONI PRIVATE! LO STESSO PER LE VARIABILI GLOBALI!
 
 // This is a module. The globalThis export is used. The globalThis export can also be used with variables.
 
 // Global variables
 var light_name = "custom_light";
 var dark_name = "custom_dark";
+
 var thirdOrderBrowserArray = [];
 globalThis.thirdOrderBrowserArray = thirdOrderBrowserArray;
+
+// All in the code below, if "availableLanguagesArray" being null or undefined is not checked, it is because it is guaranteed it will exist (assumed YAML variables are being used correctly!!! Bad management of YAML variables is not handled)
+var availableLanguagesArray = null;
+var disambiguationLang = null;
+
+// Dizionario di mapping tra le lingue e le sigle utilizzate per indicarle
+var mappingDictionaryForLanguages = {
+  "en": "English",
+  "it": "Italiano"
+}
 
 // Function to switch between light and dark mode
 // The function should be called within a button
@@ -162,3 +176,293 @@ function syncRetrieveTheme() {
   }
 }
 globalThis.syncRetrieveTheme = syncRetrieveTheme;
+
+// Function to go the same page with a different language
+function changeLanguage(currentLanguage, newLanguage) {
+  // Surround the currentLanguage with "/"
+  currentLanguage = "/" + currentLanguage + "/";
+
+  // Surround the newLanguage with "/"
+  newLanguage = "/" + newLanguage + "/";
+
+  // currentLanguage is in the following format: "/langauge/"
+  // newLanguage is in the following format: "/language/"
+  // In the current web page URL replace the current language with the new one
+  // This reloads the page with the new URL
+  window.location.href = window.location.href.replace(currentLanguage, newLanguage);
+}
+globalThis.changeLanguage = changeLanguage;
+
+function antiDisambigURL(toAppend) {
+  // Get the current URL and append "toAppend" to it. Then set this new URL as the current URL
+  window.location.href = window.location.href + toAppend;
+}
+
+// We should have access to the variable "availableLanguagesArray"
+function compileDropdownLanguageChoicer() {
+  // The "availableLanguagesArray" is an array containing the languages available for the current page. With these languages (that are strings) compile the elements of the dropdown menu with id: "dropdownLanguageChoicer".
+  var toInject = "";
+
+  for (var i = 0; i < availableLanguagesArray.length; i++) {
+    var currentLanguage = availableLanguagesArray[0];
+
+    // Highlight the current language
+      if (i == 0) {
+        // // toInject += `<a class="active" href='javascript:changeLanguage("${currentLanguage}", "${availableLanguagesArray[i]}");'>` + mappingDictionaryForLanguages[availableLanguagesArray[i]] + "</a>";
+
+        toInject += `<li class="nav-list-item"><a class="nav-list-link active" href='javascript:changeLanguage("${currentLanguage}", "${availableLanguagesArray[i]}");'>` + mappingDictionaryForLanguages[availableLanguagesArray[i]] + "</a></li>";
+
+        continue;
+      }
+
+      // Check if availableLanguagesArray[i] is not null or undefined
+      if (availableLanguagesArray[i]) {
+        // // toInject += `<a href='javascript:changeLanguage("${currentLanguage}", "${availableLanguagesArray[i]}");'>` + mappingDictionaryForLanguages[availableLanguagesArray[i]] + "</a>";
+
+        toInject += `<li class="nav-list-item "><a class="nav-list-link" href='javascript:changeLanguage("${currentLanguage}", "${availableLanguagesArray[i]}");'>` + mappingDictionaryForLanguages[availableLanguagesArray[i]] + "</a></li>";
+      }
+  }
+
+  document.getElementById("dropdown-content").innerHTML = toInject;
+}
+globalThis.compileDropdownLanguageChoicer = compileDropdownLanguageChoicer;
+
+function assignVariable_availableLanguagesArray(content) {
+  availableLanguagesArray = content;
+}
+globalThis.assignVariable_availableLanguagesArray = assignVariable_availableLanguagesArray;
+
+function assignVariable_disambiguationLang(content) {
+  disambiguationLang = content;
+}
+globalThis.assignVariable_disambiguationLang = assignVariable_disambiguationLang;
+
+function handleDisambiguationPage() {
+  // A disambiguation page is detected if it is not placed in a language directory. These pages SHOULD REALLY BE disambiguation pages, that is pages that are bare and should redirect to the correct page with a well-defined language. The language should be deduced by previous well-defined language pages; if a deduction is not possible, fallback to a default language.
+
+  // Now disambiguation lang should be set
+  antiDisambigURL(disambiguationLang + "/");
+}
+globalThis.handleDisambiguationPage = handleDisambiguationPage;
+
+function isDisambiguationPage() {
+  // Test the URL of the page to check if it is a disambiguation page: it is a disambiguation page if "/language/" is not present in the URL, with "language" iterating over the keys of the "mappingDictionaryForLanguages" object
+  for (var key in mappingDictionaryForLanguages) {
+    if (window.location.href.indexOf("/" + key + "/") > -1) {
+      return false;
+    }
+  }
+
+  return true;
+}
+globalThis.isDisambiguationPage = isDisambiguationPage;
+
+function syncLanguage() {
+ // Checks if the "sessionStorage" object is supported by the browser
+ if (typeof (Storage) !== "undefined") {
+  if (sessionStorage.lang == null || sessionStorage.lang == undefined) {
+    handleDisambiguationPage();
+  }
+  else {
+    if (disambiguationPageTestCompatibility()) {
+      // Vai alla pagina corretta in base all'ultimo linguaggio usato
+      antiDisambigURL(sessionStorage.lang + "/");
+    } else {
+      handleDisambiguationPage();
+    }
+  }
+} else {
+  if (syncLanguage.lang == null || syncLanguage.lang == undefined) {
+    handleDisambiguationPage();
+  } else {
+    if (disambiguationPageTestCompatibility()) {
+      // Vai alla pagina corretta in base all'ultimo linguaggio usato
+      antiDisambigURL(syncLanguage.lang + "/");
+    } else {
+      handleDisambiguationPage();
+    }
+  }
+}
+}
+globalThis.syncLanguage = syncLanguage;
+
+function setLastUsedLanguage() {
+  // Checks if the "sessionStorage" object is supported by the browser
+  if (typeof (Storage) !== "undefined") {
+    sessionStorage.lang = availableLanguagesArray[0];
+  } else {
+    syncLanguage.lang = availableLanguagesArray[0];
+  }
+}
+globalThis.setLastUsedLanguage = setLastUsedLanguage;
+
+function disambiguationPageTestCompatibility() {
+  // Check if "availableLanguagesArray" is null or undefined
+  if (availableLanguagesArray == null || availableLanguagesArray == undefined) {
+    return false;
+  }
+
+  // Checks if the "sessionStorage" object is supported by the browser
+  if (typeof (Storage) !== "undefined") {
+    // Check that "sessionStorage.lang" is in the array "availableLanguagesArray"
+    if (availableLanguagesArray.indexOf(sessionStorage.lang) > -1) {
+      // The language is supported
+      return true;
+    } else {
+      // The language is not supported
+      return false;
+    }
+  } else {
+    // Check that "syncLanguage.lang" is in the array "availableLanguagesArray"
+    if (availableLanguagesArray.indexOf(syncLanguage.lang) > -1) {
+      // The language is supported
+      return true;
+    } else {
+      // The language is not supported
+      return false;
+    }
+  }
+}
+globalThis.disambiguationPageTestCompatibility = disambiguationPageTestCompatibility;
+
+// Lo scopo di questa funzione è quello di interrogare l'url specificato e, se la risposta è valida, chiamare la funzione callback con la risposta come parametro. La funzione non sarà pubblica "globalThis.queryCDN = queryCDN;" per questioni di sicurezza.
+function queryCDN(url, callback) {
+  // Query the CDN at the given URL. Expect the URL to point to a JSON file.
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.onload = function () {
+    if (xhr.readyState == 4 && xhr.status == "200") {
+      var response = JSON.parse(xhr.responseText);
+      return response;
+    } else {
+      return null;
+    }
+  }
+
+  // Check if the "response" is valid
+  if (response == null || response == undefined) {
+    return null;
+  }
+
+  // Call the callback function with the response
+  callback(response);
+}
+
+var labels_states_map = null;
+
+// Compiles the "labels_states_map" variable
+function queryCDN_map_labels_states() {
+  if (labels_states_map != null || labels_states_map != undefined) {
+    // Querying the CDN is not necessary
+    return;
+  }
+
+  // Hard definition of the URL
+  // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json"
+  var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json";
+
+  // Callback
+  function callback(response) {
+    // Save the JSON object in the "labels_states_map" variable; "labels_states_map" should be a dictionary
+    labels_states_map = response;
+  }
+
+  // Query the CDN
+  queryCDN(url, callback);
+}
+globalThis.queryCDN_map_labels_states = queryCDN_map_labels_states;
+
+// labels_states
+var labels_states = null;
+
+// Compiles the "labels_states" variable
+function queryCDN_labels_states() {
+  if (labels_states != null || labels_states != undefined) {
+    // Querying the CDN is not necessary
+    return;
+  }
+
+  // Hard definition of the URL
+  // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json"
+  var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json";
+
+  // Callback
+  function callback(response) {
+    // Save the JSON object in the "labels_states" variable; "labels_states" should be a dictionary
+    labels_states = response;
+  }
+
+  // Query the CDN
+  queryCDN(url, callback);
+}
+globalThis.queryCDN_labels_states = queryCDN_labels_states;
+
+// Map the "labels_states" variable to the "labels_states_map" variable
+function mapStateToHTMLContent_labels(state) {
+  // Check if the "labels_states_map" variable is null or undefined
+  if (labels_states_map == null || labels_states_map == undefined) {
+    // The CDN with the required informations should have alredy been queried. Thus, there's something wrong. Filling won't be performed.
+    return;
+  }
+
+  // Note the structure of the "labels_states_map" variable:
+  /*
+  {
+    "labels": [
+        {
+            "state": "",
+            "htmlContent": ""
+        }
+    ]
+  }
+  */
+  
+  // Retrive the "htmlContent" from the "labels_states_map" variable based on the "state" parameter
+  var htmlContent = labels_states_map.labels.find(function (element) {
+    return element.state == state;
+  }
+  ).htmlContent;
+
+  return htmlContent;
+}
+
+// Given the "id" of a "<div></div>", it will inject in that "<div></div>" the corresponding label with its textual content. To be called foreach label with "<script></script>" in the HTML (aka: MD) file.
+function fill_labels_state(id) {
+  // Check if the "labels_states_map" variable and the variable "labels_states" is null or undefined
+  if (labels_states_map == null || labels_states_map == undefined || labels_states == null || labels_states == undefined) {
+    // The CDN with the required informations should have alredy been queried. Thus, there's something wrong. Filling won't be performed.
+    return;
+  }
+
+  // Note the structure of the "labels_states" variable:
+  /*
+  {
+      "labels": [
+          {
+              "id": "",
+              "description": "",
+              "state": "",
+              "content": ""
+          }
+      ]
+  }
+  */
+
+  // Retrive the "state" from the "labels_states"
+  var state = labels_states.labels[id].state;
+
+  // Retrive the "htmlContent" from the "labels_states_map" variable based on the "state" parameter
+  var htmlContent = mapStateToHTMLContent_labels(state);
+
+  // Inject HTML
+  var toInject = "";
+
+  // Append "content" (from the "labels_states" variable) to the "toInject" variable
+  toInject += labels_states.labels[id].content + "\n";
+
+  // Append "htmlContent" (from the "labels_states_map" variable) to the "toInject" variable
+  toInject += htmlContent;
+  
+  document.getElementById(id).innerHTML = htmlContent;
+}
+globalThis.fill_labels_state = fill_labels_state;

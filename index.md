@@ -78,8 +78,11 @@ Tutte le pagine web sotto il dominio `andreagrandieri.github.io` seguono una pre
 Un esempio di label:
 {: .d-inline-block }
 
-LABEL
-{: .label }
+<div id="label-1"></div>
+
+<script type="module">
+  fill_labels_state("label-1");
+</script>
 
 [Vai alla risorsa](pages/Legenda-labels){: .btn }
 
