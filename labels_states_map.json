@@ -1,0 +1,44 @@
+{
+    "labels": [
+        {
+            "state": "END",
+            "htmlContent": "{: .label .label-end-color }"
+        },
+        {
+            "state": "STABLE",
+            "htmlContent": "{: .label .label-green }"
+        },
+        {
+            "state": "RELAXED",
+            "htmlContent": "{: .label .label-relax-color }"
+        },
+        {
+            "state": "ARCHIVED",
+            "htmlContent": "{: .label .label-archived-color }"
+        },
+        {
+            "state": "DEPRECATED",
+            "htmlContent": "{: .label .label-red }"
+        },
+        {
+            "state": "MISSING",
+            "htmlContent": "{: .label .label-missing-color }"
+        },
+        {
+            "state": "VERSION",
+            "htmlContent": "{: .label .label-blue }"
+        },
+        {
+            "state": "GENERIC-1",
+            "htmlContent": "{: .label }"
+        },
+        {
+            "state": "GENERIC-2",
+            "htmlContent": "{: .label .label-purple }"
+        },
+        {
+            "state": "GENERIC-3",
+            "htmlContent": "{: .label .label-yellow }"
+        }
+    ]
+}
