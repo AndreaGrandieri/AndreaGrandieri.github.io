@@ -1,41 +1,48 @@
-// NOT USED
-// // .dropbtn {
-// //     background-color: #04AA6D;
-// //     color: white;
-// //     padding: 16px;
-// //     font-size: 16px;
-// //     border: none;
-// //   }
-  
-// //   .dropdown {
-// //     position: relative;
-// //     display: inline-block;
-// //   }
-  
-// //   .dropdown-content {
-// //     display: none;
-// //     position: absolute;
-// //     background-color: #f1f1f1;
-// //     min-width: 160px;
-// //     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-// //     z-index: 1;
-// //   }
-  
-// //   .dropdown-content a {
-// //     color: black;
-// //     padding: 12px 16px;
-// //     text-decoration: none;
-// //     display: block;
-// //   }
-  
-// //   .dropdown-content a:hover {background-color: #ddd;}
-  
-// //   .dropdown:hover .dropdown-content {display: block;}
-  
-// //   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+/////////////////////////////////////////////////////////////
+// NOT IN USE
+/////////////////////////////////////////////////////////////
 
-// //   // Define rule for the dropdown item that is active
-// //   .dropdown-content a.active {
-// //     background-color: #04AA6D;
-// //     color: white;
-// //   }
+// // Fixing callout default colors problems
+
+// // Fixing purple
+// // Background in light mode
+// // Title && Box Decoration in dark mode
+// // $fixpurple-000: #a895f4;
+// $fixpurple-000: #72b136;
+
+// // Title && Box Decoration in light mode
+// // Background in dark mode
+// $fixpurple-300: #381885;
+
+// /////////////////////////////////////////////////////////////////
+
+// // Fixing blue
+// // Background in light mode
+// // Title && Box Decoration in dark mode
+// $fixblue-000: #8dbdfc;
+
+// // Title && Box Decoration in light mode
+// // Background in dark mode
+// $fixblue-300: #183385;
+
+// /////////////////////////////////////////////////////////////////
+
+// // Fixing grey-dk
+// // Background in light mode
+// // Title && Box Decoration in dark mode
+// $fixgrey-dk-000: #c5c4c5;
+
+// // Title && Box Decoration in light mode
+// // Background in dark mode
+// $fixgrey-dk-300: #27262b;
+
+// /////////////////////////////////////////////////////////////////
+
+// // Fixing green
+// // Background in light mode
+// // Title && Box Decoration in dark mode
+// $fixgreen-000: #9eeac8;
+
+// // Title && Box Decoration in light mode
+// // Background in dark mode
+// $fixgreen-300: #026e57;
