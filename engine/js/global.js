@@ -347,25 +347,27 @@ var labels_states_map = null;
 
 // Compiles the "labels_states_map" variable
 function queryCDN_map_labels_states() {
-  console.log("Querying the CDN for the labels_states_map.json file...");
+  return new Promise(resolve => {
+    console.log("Querying the CDN for the labels_states_map.json file...");
 
-  if (labels_states_map != null || labels_states_map != undefined) {
-    // Querying the CDN is not necessary
-    return;
-  }
-
-  // Hard definition of the URL
-  // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json"
-  var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json";
-
-  // Callback
-  function callback(response) {
-    // Save the JSON object in the "labels_states_map" variable; "labels_states_map" should be a dictionary
-    labels_states_map = response;
-  }
-
-  // Query the CDN
-  queryCDN(url, callback);
+    if (labels_states_map != null || labels_states_map != undefined) {
+      // Querying the CDN is not necessary
+      return;
+    }
+  
+    // Hard definition of the URL
+    // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json"
+    var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states_map.json";
+  
+    // Callback
+    function callback(response) {
+      // Save the JSON object in the "labels_states_map" variable; "labels_states_map" should be a dictionary
+      labels_states_map = response;
+    }
+  
+    // Query the CDN
+    queryCDN(url, callback); 
+  });
 }
 globalThis.queryCDN_map_labels_states = queryCDN_map_labels_states;
 
@@ -374,25 +376,27 @@ var labels_states = null;
 
 // Compiles the "labels_states" variable
 function queryCDN_labels_states() {
-  console.log("queryCDN_labels_states");
+  return new Promise(resolve => {
+    console.log("queryCDN_labels_states");
 
-  if (labels_states != null || labels_states != undefined) {
-    // Querying the CDN is not necessary
-    return;
-  }
-
-  // Hard definition of the URL
-  // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json"
-  var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json";
-
-  // Callback
-  function callback(response) {
-    // Save the JSON object in the "labels_states" variable; "labels_states" should be a dictionary
-    labels_states = response;
-  }
-
-  // Query the CDN
-  queryCDN(url, callback);
+    if (labels_states != null || labels_states != undefined) {
+      // Querying the CDN is not necessary
+      return;
+    }
+  
+    // Hard definition of the URL
+    // URL is: "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json"
+    var url = "https://raw.githubusercontent.com/AndreaGrandieri/andreagrandieri.github.io/cdn/labels_states.json";
+  
+    // Callback
+    function callback(response) {
+      // Save the JSON object in the "labels_states" variable; "labels_states" should be a dictionary
+      labels_states = response;
+    }
+  
+    // Query the CDN
+    queryCDN(url, callback);
+  });
 }
 globalThis.queryCDN_labels_states = queryCDN_labels_states;
 
@@ -472,9 +476,9 @@ function fill_labels_state(id) {
   document.getElementById(id).innerHTML = htmlContent;
 }
 
-function selfsustainable_fill_labels_state(id) {
-  queryCDN_map_labels_states();
-  queryCDN_labels_states();
+async function selfsustainable_fill_labels_state(id) {
+  await queryCDN_map_labels_states();
+  await queryCDN_labels_states();
   fill_labels_state(id);
 }
 globalThis.selfsustainable_fill_labels_state = selfsustainable_fill_labels_state;
