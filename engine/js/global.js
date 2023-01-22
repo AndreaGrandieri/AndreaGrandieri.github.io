@@ -328,24 +328,17 @@ globalThis.disambiguationPageTestCompatibility = disambiguationPageTestCompatibi
 // Lo scopo di questa funzione è quello di interrogare l'url specificato e, se la risposta è valida, chiamare la funzione callback con la risposta come parametro. La funzione non sarà pubblica "globalThis.queryCDN = queryCDN;" per questioni di sicurezza.
 function queryCDN(url, callback) {
   // Query the CDN at the given URL. Expect the URL to point to a JSON file.
+  // When the query is complete, call the callback function with the JSON
+  // object as the argument.
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
-  xhr.onload = function () {
-    if (xhr.readyState == 4 && xhr.status == "200") {
-      var response = JSON.parse(xhr.responseText);
-      return response;
-    } else {
-      return null;
-    }
-  }
-
-  // Check if the "response" is valid
-  if (response == null || response == undefined) {
-    return null;
-  }
-
-  // Call the callback function with the response
-  callback(response);
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+          var data = JSON.parse(xhr.responseText);
+          callback(data);
+      }
+  };
+  xhr.send();
 }
 
 var labels_states_map = null;
