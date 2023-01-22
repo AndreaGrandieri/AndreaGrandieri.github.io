@@ -460,20 +460,14 @@ function fill_labels_state(id) {
   // Retrive the "htmlContent" from the "labels_states_map" variable based on the "state" parameter
   var htmlContent = mapStateToHTMLContent_labels(state);
 
-  // Inject HTML
-  var toInject = "";
-
   // Retrive the "content" from the "labels_states" variable based on the "id" parameter
   var content = labels_states.labels.find(function (element) {
     return element.id == id;
   }
   ).content;
 
-  // Append "content" (from the "labels_states" variable) to the "toInject" variable
-  toInject += content + "\n";
-
-  // Append "htmlContent" (from the "labels_states_map" variable) to the "toInject" variable
-  toInject += htmlContent;
+  // The "htmlContent" is of type: "<p 'some other stuff'></p>": put the "content" inside the "<p 'some other stuff'></p>"
+  htmlContent = htmlContent.replace("></p>", ">" + content + "</p>");
   
   document.getElementById(id).innerHTML = htmlContent;
 }
