@@ -3,7 +3,6 @@
 //                                                             //
 //                                                             //
 // Andrea Grandieri andreagrandieri.github.io                  //
-// Copiloted by Copilot@GitHub                                 //
 //                                                             //
 //                                                             //
 /////////////////////////////////////////////////////////////////
@@ -14,6 +13,8 @@
 // Global variables
 var light_name = "custom_light";
 var dark_name = "custom_dark";
+var thirdOrderBrowserArray = [];
+globalThis.thirdOrderBrowserArray = thirdOrderBrowserArray;
 
 // Function to switch between light and dark mode
 // The function should be called within a button
@@ -52,7 +53,6 @@ function themeModeSwitcher() {
 }
 globalThis.themeModeSwitcher = themeModeSwitcher;
 
-// Toggle the dark mode
 function toggleDarkMode(injectFlag) {
   if (injectFlag) {
     // Check if element of id "lightdarkSwitcherButton" exists.
@@ -71,8 +71,8 @@ function toggleDarkMode(injectFlag) {
     jtd.setTheme(themeModeSwitcher.theme);
   }
 }
+globalThis.toggleDarkMode = toggleDarkMode;
 
-// Toggle the light mode
 function toggleLightMode(injectFlag) {
   // Check if element of id "lightdarkSwitcherButton" exists.
   if (document.getElementById("lightdarkSwitcherButton")) {
@@ -91,8 +91,8 @@ function toggleLightMode(injectFlag) {
     jtd.setTheme(themeModeSwitcher.theme);
   }
 }
+globalThis.toggleLightMode = toggleLightMode;
 
-// Retrieve the current theme, if exists
 function retrieveTheme() {
   // Checks if the "sessionStorage" object is supported by the browser
   if (typeof (Storage) !== "undefined") {
@@ -115,6 +115,27 @@ function retrieveTheme() {
   }
 }
 globalThis.retrieveTheme = retrieveTheme;
+
+function appendToThirdOrderBrowserArray(string) {
+  thirdOrderBrowserArray.push(string);
+}
+globalThis.appendToThirdOrderBrowserArray = appendToThirdOrderBrowserArray;
+
+function injectHMTLToThirdOrderBrowserDiv() {
+  var toInject = "<li class=\"aux-nav-list-item\"><a href=\"" + thirdOrderBrowserArray[1] + "\"" + "class=\"site-button\"";
+  if (thirdOrderBrowserArray[2] == "true") {
+    toInject += " target=\"_blank\" rel=\"noopener noreferrer\"";
+  }
+  toInject += ">" + thirdOrderBrowserArray[0] + "</a></li>";
+
+  document.getElementById("thirdOrderBrowserDiv").innerHTML += toInject;
+}
+globalThis.injectHMTLToThirdOrderBrowserDiv = injectHMTLToThirdOrderBrowserDiv;
+
+function flushThirdOrderBrowserArray() {
+  thirdOrderBrowserArray = [];
+}
+globalThis.flushThirdOrderBrowserArray = flushThirdOrderBrowserArray;
 
 // It changes the icon of the button to switch between light and dark mode accordingly to the ALREADY retrieved theme
 // It should be called after the function "retrieveTheme()"
