@@ -1,0 +1,16 @@
+{
+  "labels": [
+    {
+      "id": "test1",
+      "description": "",
+      "state": "GENERIC-1",
+      "content": "TEST1"
+    },
+    {
+      "id": "test2",
+      "description": "",
+      "state": "GENERIC-2",
+      "content": "TEST2"
+    }
+  ]
+}
