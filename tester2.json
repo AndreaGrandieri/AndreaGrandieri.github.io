@@ -1,0 +1,12 @@
+{
+  "labels": [
+    {
+      "state": "TESTTEST1",
+      "htmlContent": "<p><p><p>"
+    },
+    {
+      "state": "TESTTEST2",
+      "htmlContent": "<p><p><p>"
+    }
+  ]
+}
