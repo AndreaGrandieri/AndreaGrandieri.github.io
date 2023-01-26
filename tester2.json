@@ -7,6 +7,10 @@
     {
       "state": "TESTTEST2",
       "htmlContent": "<p><p><p>"
+    },
+    {
+      "state": "GENERIC-99",
+      "htmlContent": "<p class='label label-yellow'></p>"
     }
   ]
 }
