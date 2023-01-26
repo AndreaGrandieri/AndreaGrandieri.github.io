@@ -4,13 +4,13 @@
       "id": "test1",
       "description": "",
       "state": "GENERIC-1",
-      "content": "TEST1"
+      "content": "WOW TEST1"
     },
     {
       "id": "test2",
       "description": "",
-      "state": "GENERIC-2",
-      "content": "TEST2"
+      "state": "GENERIC-99",
+      "content": "WOW TEST2"
     }
   ]
 }
