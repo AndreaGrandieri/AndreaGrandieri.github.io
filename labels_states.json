@@ -1,52 +1,70 @@
 {
-  "labels": [
-    {
-      "id": "label-1",
-      "description": "index.md di 'andreagrandieri.github.io'",
-      "state": "GENERIC-1",
-      "content": "LABEL"
-    },
-    {
-      "id": "label-2",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "STABLE",
-      "content": "STABLE"
-    },
-    {
-      "id": "label-3",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "STABLE",
-      "content": "STABLE"
-    },
-    {
-      "id": "label-4",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "VERSION",
-      "content": "VERSION: B"
-    },
-    {
-      "id": "label-5",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "STABLE",
-      "content": "STABLE"
-    },
-    {
-      "id": "label-6",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "VERSION",
-      "content": "VERSION: B"
-    },
-    {
-      "id": "label-7",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "STABLE",
-      "content": "STABLE"
-    },
-    {
-      "id": "label-8",
-      "description": "grn-deploy-webstatic.md di 'andreagrandieri.github.io'",
-      "state": "VERSION",
-      "content": "VERSION: A"
-    }
-  ]
+    "labels": [
+        {
+            "id": "grn-deploy-webstatic-label-1",
+            "description": "grn-deploy-webstatic",
+            "state": "STABLE",
+            "content": "STABLE"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-2",
+            "description": "Repolink State",
+            "state": "STABLE",
+            "content": "STABLE"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-3",
+            "description": "Repolink Version",
+            "state": "VERSION",
+            "content": "VERSION: B"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-4",
+            "description": "Jekyll-Build-N-Push State",
+            "state": "STABLE",
+            "content": "STABLE"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-5",
+            "description": "Jekyll-Build-N-Push Version",
+            "state": "VERSION",
+            "content": "VERSION: B"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-6",
+            "description": "Adapter State",
+            "state": "STABLE",
+            "content": "STABLE"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-7",
+            "description": "Adapter Version",
+            "state": "VERSION",
+            "content": "VERSION: A"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-8",
+            "description": "Engine State",
+            "state": "STABLE",
+            "content": "STABLE"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-9",
+            "description": "Engine Version",
+            "state": "VERSION",
+            "content": "VERSION: C"
+        },
+        {
+            "id": "private-function-label",
+            "description": "Private Function",
+            "state": "FUNCTION-VISIBILITY",
+            "content": "PRIVATE"
+        },
+        {
+            "id": "public-function-label",
+            "description": "Public Function",
+            "state": "FUNCTION-VISIBILITY",
+            "content": "PUBLIC"
+        }
+    ]
 }
