@@ -65,6 +65,30 @@
             "description": "Public Function",
             "state": "FUNCTION-VISIBILITY",
             "content": "PUBLIC"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-10",
+            "description": "Repolink Programming Language",
+            "state": "PROGRAMMING-LANGUAGE",
+            "content": "PYTHON"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-11",
+            "description": "Jekyll-Build-N-Push Programming Language",
+            "state": "PROGRAMMING-LANGUAGE",
+            "content": "PYTHON"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-12",
+            "description": "Adapter Programming Language",
+            "state": "PROGRAMMING-LANGUAGE",
+            "content": "PYTHON"
+        },
+        {
+            "id": "grn-deploy-webstatic-label-13",
+            "description": "Engine Programming Language",
+            "state": "PROGRAMMING-LANGUAGE",
+            "content": "JAVASCRIPT"
         }
     ]
 }
