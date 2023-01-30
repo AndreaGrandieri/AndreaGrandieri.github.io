@@ -103,6 +103,6 @@ Se una nuova versione viene rilasciata, si avanza a: `VERSION: ZA`, lasciando co
 
 ---
 
-## VERSION: DYNAMIC
+## `VERSION: DYNAMIC`
 
-Questa particolare versione (`VERSION: DYNAMIC`) viene utilizzata quando non si pianifica un mantenimento _classico_ di versione come sopra descritto. Così facendo, si è essenzialmente autorizzati a non tener traccia della versione della repository trattata. Solitamente questa scelta è rivolta a repository in cui il formalismo di versione non è strettamente necessario, repository a solo uso privato e repository ancora nel primo stadio di assestamento dello sviluppo. In qualsiasi momento è possibile passare al sistema di versioning _classico_, partendo da: `VERSION: A`.
+Questa particolare versione viene utilizzata quando non si pianifica un mantenimento _classico_ di versione come sopra descritto. Così facendo, si è essenzialmente autorizzati a non tener traccia della versione della repository trattata. Solitamente questa scelta è rivolta a repository in cui il formalismo di versione non è strettamente necessario, repository a solo uso privato e repository ancora nel primo stadio di assestamento dello sviluppo. In qualsiasi momento è possibile passare al sistema di versioning _classico_, partendo da: `VERSION: A`.

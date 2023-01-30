@@ -61,7 +61,7 @@ lang: it
 
 Completa lista dei progetti pubblici.
 
-[Vai alla risorsa](pages/it/Projects){: .btn }
+[Vai alla risorsa](/pages/it/Projects){: .btn }
 
 ---
 
@@ -72,7 +72,7 @@ Completa lista dei progetti pubblici.
 >
 > Motore semplice ed intuitivo di deploy di siti web statici.
 
-[Vai alla risorsa](pages/it/grn-deploy-webstatic){: .btn }
+[Vai alla risorsa](/pages/it/grn-deploy-webstatic){: .btn }
 
 ---
 
@@ -89,7 +89,7 @@ Un esempio di label:
   selfsustainable_fill_labels_state("index-md-andreagrandieri-github-io-example");
 </script>
 
-[Vai alla risorsa](pages/it/Legenda-labels){: .btn }
+[Vai alla risorsa](/pages/it/Legenda-labels){: .btn }
 
 ---
 
@@ -97,4 +97,4 @@ Un esempio di label:
 
 Protocollo di versioning adottato dalle repository sotto il dominio `andreagrandieri.github.io`.
 
-[Vai alla risorsa](pages/it/Versioning){: .btn }
+[Vai alla risorsa](/pages/it/Versioning){: .btn }
