@@ -301,11 +301,11 @@ function universal404() {
         // From the string "currentPageURL", remove the part: "https://<domain>" (or "http://<domain>")
         currentPageURL = currentPageURL.replace(/^https?:\/\/[^\/]+/, "");        
 
-        // The generic interpretation of the string "str" is: "/?/?", with "?" that can be any string, THAT MAY OR MAY NOT CONTAIN "/".
+        // The generic interpretation of the string "currentPageURL" is: "/?/?", with "?" that can be any string, THAT MAY OR MAY NOT CONTAIN "/".
         // Save the first "?" and the second "?" in two variables.
 
-        var first = str.split("/")[1];
-        // // var second = str.split("/")[2];
+        var first = currentPageURL.split("/")[1];
+        // // var second = currentPageURL.split("/")[2];
 
         // In "currentPageURL", substitute "first" with "language" and leave "second" unchanged.
         erroneus = first;
