@@ -249,6 +249,10 @@ var erroneus = null;
 Scopo della funzione: una volta raggiunta la pagina 404 (della propria lingua se disponibile o della lingua di default), questa funzione entra in gioco presentando nella pagina 404 una tabella contenente la lista di tutte le lingue disponibili per la pagina richiesta che ha causato il raggiungimento della pagina 404. Questa tabella deve solo e solamente entrare in gioco quando la pagina 404 viene raggiunta a causa della richiesta di una pagina VALIDA ma che non esiste nella lingua richiesta.
 */
 function universal404() {
+  /*
+  Lieve imprecisione nel trattare link del tipo: "https://<domain>/pages" (o "https://<domain>/pages/") ma nulla di grave: non si riscontrano nè interrogazioni pericolose nè invasive.
+  */
+
   return new Promise(async (resolve, reject) => {
     // Get the current page URL
     var currentPageURL = window.location.href;
