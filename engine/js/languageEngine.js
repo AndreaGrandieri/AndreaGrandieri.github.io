@@ -254,12 +254,9 @@ function universal404() {
     var currentPageURL = window.location.href;
 
     // CRITICAL to ensure point 1 of (*)
-    // Check if the "currentPageURL" ends with ".html"
-    if (!currentPageURL.endsWith(".html")) {
-      // Check if the "currentPageURL" ends with "/". If not, add it
-      if (currentPageURL.charAt(currentPageURL.length - 1) != "/") {
-        currentPageURL += "/";
-      }      
+    // If the "currentPageURL" is in the form "https://<domain>/<language>" or "http://<domain>/<language>", add a "/" at the end of the URL
+    if (currentPageURL.match(/^(https?:\/\/[^\/]+\/[^\/]+)$/)) {
+      currentPageURL = currentPageURL + "/";
     }
 
     // Analize the URL to determine if a language is specified
