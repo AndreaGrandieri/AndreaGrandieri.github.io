@@ -89,6 +89,102 @@
             "description": "Engine Programming Language",
             "state": "PROGRAMMING-LANGUAGE",
             "content": "JAVASCRIPT"
+        },
+        {
+            "id": "index-md-andreagrandieri-github-io-example",
+            "description": "Example Label in page index.md of andreagrandieri.github.io",
+            "state": "GENERIC-1",
+            "content": "LABEL"
+        },
+        {
+            "id": "legenda-labels-label-1",
+            "description": "Legenda Labels END",
+            "state": "END",
+            "content": "END"
+        },
+        {
+            "id": "legenda-labels-label-2",
+            "description": "Legenda Labels STABLE",
+            "state": "STABLE",
+            "content": "STABLE"
+        },
+        {
+            "id": "legenda-labels-label-3",
+            "description": "Legenda Labels RELAXED",
+            "state": "RELAXED",
+            "content": "RELAXED"
+        },
+        {
+            "id": "legenda-labels-label-4",
+            "description": "Legenda Labels ARCHIVED",
+            "state": "ARCHIVED",
+            "content": "ARCHIVED"
+        },
+        {
+            "id": "legenda-labels-label-5",
+            "description": "Legenda Labels DEPRECATED",
+            "state": "DEPRECATED",
+            "content": "DEPRECATED"
+        },
+        {
+            "id": "legenda-labels-label-6",
+            "description": "Legenda Labels MISSING",
+            "state": "MISSING",
+            "content": "MISSING"
+        },
+        {
+            "id": "legenda-labels-label-7",
+            "description": "Legenda Labels VERSION",
+            "state": "VERSION",
+            "content": "VERSION: <version>"
+        },
+        {
+            "id": "projects-label-1",
+            "description": "Projects: MagicMirror-GBM",
+            "state": "END",
+            "content": "END"
+        },
+        {
+            "id": "projects-label-2",
+            "description": "Projects: MagicMirror-GBM",
+            "state": "VERSION",
+            "content": "VERSION: Z (pre-versioning protocol)"
+        },
+        {
+            "id": "projects-label-3",
+            "description": "Projects: RadioSvegliaGBE",
+            "state": "MISSING",
+            "content": "MISSING"
+        },
+        {
+            "id": "projects-label-4",
+            "description": "Projects: DirectDownloadLink-Onedrive",
+            "state": "MISSING",
+            "content": "MISSING"
+        },
+        {
+            "id": "projects-label-5",
+            "description": "Projects: MMM-MD",
+            "state": "MISSING",
+            "content": "MISSING"
+        },
+        {
+            "id": "projects-label-6",
+            "description": "Projects: EEPROM-Programmer",
+            "state": "MISSING",
+            "content": "MISSING"
+        },
+        {
+            "id": "projects-label-7",
+            "description": "Projects: Comuni-Italia",
+            "state": "MISSING",
+            "content": "MISSING"
+        },
+        {
+            "id": "projects-label-8",
+            "description": "Projects: Progetto Gelateria BBG",
+            "state": "MISSING",
+            "content": "MISSING"
         }
     ]
 }
