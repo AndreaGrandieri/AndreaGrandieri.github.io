@@ -253,6 +253,9 @@ function universal404() {
     // Get the current page URL
     var currentPageURL = window.location.href;
 
+    // If multiple "/" are found anywhere in "currentPageURL", replace them with a single "/"
+    currentPageURL = currentPageURL.replace(/\/+/g, "/");
+
     // CRITICAL to ensure point 1 of (*)
     // If the "currentPageURL" is in the form "https://<domain>/<language>" or "http://<domain>/<language>", add a "/" at the end of the URL
     if (currentPageURL.match(/^(https?:\/\/[^\/]+\/[^\/]+)$/)) {
