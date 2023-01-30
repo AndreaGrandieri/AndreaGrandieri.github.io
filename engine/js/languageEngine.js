@@ -283,10 +283,13 @@ function universal404() {
         // Type 1
         // Substitute
 
-        // The generic interpretation of the string is: "/pages/?/?", with "?" that can be any string.
+        // From the string "currentPageURL", remove the part: "https://<domain>" (or "http://<domain>")
+        currentPageURL = currentPageURL.replace(/^https?:\/\/[^\/]+/, "");
+
+        // The generic interpretation of the string "currentPageURL" is: "/pages/?/?", with "?" that can be any string, THAT MAY OR MAY NOT CONTAIN "/".
         // Save the first "?" and the second "?" in two variables.
-        var first = currentPageURL.match(/\/pages\/(.*?)\//)[1];
-        // // var second = currentPageURL.match(/\/pages\/.*?\/(.*?)$/)[1];
+        var first = currentPageURL.split("/")[2];
+        // // var second = currentPageURL.split("/")[3];
 
         // In "currentPageURL", substitute "first" with "language" and leave "second" unchanged.
         erroneus = first;
@@ -294,15 +297,19 @@ function universal404() {
       } else {
         // Type 2
         // Substitute
-        var pos = currentPageURL.lastIndexOf(
-          "/",
-          currentPageURL.lastIndexOf("/") - 1
-        );
 
-        // Save in "erroneus" the language that is currently specified in the URL
-        erroneus = currentPageURL.substring(pos + 1, currentPageURL.length - 1);
+        // From the string "currentPageURL", remove the part: "https://<domain>" (or "http://<domain>")
+        currentPageURL = currentPageURL.replace(/^https?:\/\/[^\/]+/, "");        
 
-        newURL = currentPageURL.substring(0, pos) + "/" + language + "/";
+        // The generic interpretation of the string "str" is: "/?/?", with "?" that can be any string, THAT MAY OR MAY NOT CONTAIN "/".
+        // Save the first "?" and the second "?" in two variables.
+
+        var first = str.split("/")[1];
+        // // var second = str.split("/")[2];
+
+        // In "currentPageURL", substitute "first" with "language" and leave "second" unchanged.
+        erroneus = first;
+        newURL = currentPageURL.replace(first, language);
       }
 
       // Query the new URL expecting a 200 response
