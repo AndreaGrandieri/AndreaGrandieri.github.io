@@ -103,14 +103,20 @@ function handleDisambiguationPage() {
 }
 
 function isDisambiguationPage() {
-  // Test the URL of the page to check if it is a disambiguation page: it is a disambiguation page if "/language/" is not present in the URL, with "language" iterating over the keys of the "mappingDictionaryForLanguages" object
-  for (var key in vars_languageEngine.mappingDictionaryForLanguages) {
-    if (window.location.href.indexOf("/" + key + "/") > -1) {
-      return false;
+  // The 404 page is not a disambiguation page
+  // Check if it doesn't exist a div with id "compile_universal404_target"
+  if (document.getElementById("compile_universal404_target") == null) {
+    // Test the URL of the page to check if it is a disambiguation page: it is a disambiguation page if "/language/" is not present in the URL, with "language" iterating over the keys of the "mappingDictionaryForLanguages" object
+    for (var key in vars_languageEngine.mappingDictionaryForLanguages) {
+      if (window.location.href.indexOf("/" + key + "/") > -1) {
+        return false;
+      }
     }
+
+    return true;
   }
 
-  return true;
+  return false;
 }
 globalThis.isDisambiguationPage = isDisambiguationPage;
 
