@@ -356,5 +356,7 @@ async function compile_universal404() {
     // Flush the array "exists_in". This way, manually recalling the function "compile_universal404" will not cause the table to be compiled again presenting duplicates.
     exists_in = [];
   }
+
+  console.log(availableLanguagesArray)
 }
 globalThis.compile_universal404 = compile_universal404;
