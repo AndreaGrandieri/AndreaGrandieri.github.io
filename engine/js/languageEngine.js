@@ -253,9 +253,6 @@ function universal404() {
     // Get the current page URL
     var currentPageURL = window.location.href;
 
-    // If multiple "/" are found anywhere in "currentPageURL", replace them with a single "/"
-    currentPageURL = currentPageURL.replace(/\/+/g, "/");
-
     // CRITICAL to ensure point 1 of (*)
     // If the "currentPageURL" is in the form "https://<domain>/<language>" or "http://<domain>/<language>", add a "/" at the end of the URL
     if (currentPageURL.match(/^(https?:\/\/[^\/]+\/[^\/]+)$/)) {
@@ -289,6 +286,9 @@ function universal404() {
         // From the string "currentPageURL", remove the part: "https://<domain>" (or "http://<domain>")
         currentPageURL = currentPageURL.replace(/^https?:\/\/[^\/]+/, "");
 
+        // If multiple "/" are found anywhere in "currentPageURL", replace them with a single "/"
+        currentPageURL = currentPageURL.replace(/\/+/g, "/");
+
         // The generic interpretation of the string "currentPageURL" is: "/pages/?/?", with "?" that can be any string, THAT MAY OR MAY NOT CONTAIN "/".
         // Save the first "?" and the second "?" in two variables.
         var first = currentPageURL.split("/")[2];
@@ -303,6 +303,9 @@ function universal404() {
 
         // From the string "currentPageURL", remove the part: "https://<domain>" (or "http://<domain>")
         currentPageURL = currentPageURL.replace(/^https?:\/\/[^\/]+/, "");        
+
+        // If multiple "/" are found anywhere in "currentPageURL", replace them with a single "/"
+        currentPageURL = currentPageURL.replace(/\/+/g, "/");
 
         // The generic interpretation of the string "currentPageURL" is: "/?/?", with "?" that can be any string, THAT MAY OR MAY NOT CONTAIN "/".
         // Save the first "?" and the second "?" in two variables.
