@@ -253,6 +253,12 @@ function universal404() {
     // Get the current page URL
     var currentPageURL = window.location.href;
 
+    // CRITICAL to ensure point 1 of (*)
+    // Check if the "currentPageURL" ends with "/". If not, add it
+    if (currentPageURL.charAt(currentPageURL.length - 1) != "/") {
+      currentPageURL += "/";
+    }
+
     // Analize the URL to determine if a language is specified
     // URLs can be of two types:
     // 1. https://<domain>/pages/<language>/
@@ -260,6 +266,8 @@ function universal404() {
 
     // Replace one by one the specified <language> with the languages in the dictionary "vars_languageEngine.mappingDictionaryForLanguages" (the language is the key of the dictionary).
     /*
+    (*)
+
     Metodo utilizzato: si interrogano tutte le possibili combinazioni di URL partendo, come base, dall'URL che ha portato alla pagina 404. A questo URL si sostituisce la lingua erroneamente specificata con tutte le lingue presenti nell'array "vars_languageEngine.mappingDictionaryForLanguages"; questo array contiene tutte le lingue utilizzate (almeno una volta in qualsiasi collocamento possibile) nel sito.
 
     1. L'interrogazione è sicura: non si può in alcun modo ottenere un URL che punti esternamente al dominio del sito: ergo, si rimane sempre nel dominio del sito che è considerato sicuro. NON vi possono essere casi di interrogazione di URL di siti esterni e potenzialmente pericolosi (soprattutto se vengono generati URL strani con manipolazioni di stringhe!).
@@ -325,7 +333,7 @@ async function compile_universal404() {
 
     // Now "exists_in" contains the list of languages in which the page exists. Compile the table.
     if (exists_in.length > 0) {
-      var toInject = "Supposing you requested the page in the following unavailable language: " + erroneus + ", you can find the page in the following languages:<br>";
+      var toInject = "Supposing you requested the page in the following unavailable language: <code class='language-plaintext highlighter-rouge'>" + erroneus + "</code>, you can find the page in the following languages:<br>";
 
       // Table header. These use CSS schemas from the theme
       toInject +=
@@ -356,7 +364,5 @@ async function compile_universal404() {
     // Flush the array "exists_in". This way, manually recalling the function "compile_universal404" will not cause the table to be compiled again presenting duplicates.
     exists_in = [];
   }
-
-  console.log(availableLanguagesArray)
 }
 globalThis.compile_universal404 = compile_universal404;
