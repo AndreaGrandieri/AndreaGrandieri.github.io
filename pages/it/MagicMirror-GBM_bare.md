@@ -1,22 +1,22 @@
 ---
-# Front matter of "disambiguation" page
+# Front matter of "bare" page
 
 # Theme to use. Resides in the "_layouts" folder.
 layout: default
 
 # Page title. If omitted, the page will not be included in the navbar.
-title: 404
+title: MagicMirror-GBM
 
 #################################################################
 
 # Specifies the order of the current page from the point of view of the navbar. Can have repetition in the numbers, for parent-child hierarchies.
-# # nav_order: 1
+nav_order: 1
 
 # Let exclude the page from the navbar
-nav_exclude: true
+nav_exclude: false
 
 # Let exclude the page from the built-in search engine
-search_exclude: true
+search_exclude: false
 
 #################################################################
 
@@ -24,20 +24,22 @@ search_exclude: true
 has_children: false
 
 # If this page is some page's child, specify the parent's name, otherwise comment out the option. If this page is some page's grandchild, specify grandparent's name, otherwise comment out the option.
-# # parent: NOME_PAGINA_GENITORE
-# # grand_parent: NOME_PAGINA_NONNO__GENITORE_DEL_GENITORE
+parent: Projects
+grand_parent: Index
 
 # If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality. Should always be set to "false".
 has_toc: false
 
 #################################################################
 
-# Specify the default fallback language
-disambiguation_lang: it
+# Specify the language of the page target of the redirection. So, copy the "lang"-option value of that page. "availableLanguages" is not expected here. The language should be matched in the "redirect_to" URL.
+lang: it
 
-# Specify all other available languages in which this page is available. If there's no other language in addition to "disambiguation_lang", comment out this option.
-# # availableLanguages:
-# #   - 
+#################################################################
+
+# Bare: redirect page
+redirect_to:
+    - /pages/it/Projects#magicmirror-gbm
 ---
 
-<!-- Disambiguation Page -->
+<!-- Bare Page -->

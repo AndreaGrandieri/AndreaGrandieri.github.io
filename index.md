@@ -1,92 +1,43 @@
 ---
-# Specifies the "filament" HTML page to be used. The HTML page must be located in the "_layouts" folder.
-# (should always be this)
+# Front matter of "disambiguation" page
+
+# Theme to use. Resides in the "_layouts" folder.
 layout: default
 
-# Page title
-# If omitted, the page will not be included in the navbar
-title: Index
+# Page title. If omitted, the page will not be included in the navbar.
+title: PrivateStorage
 
-# Specifies the order of the current page from the point of view of the navbar
-# Can have repetition in the numbers, for parent-child hierarchies
+#################################################################
+
+# Specifies the order of the current page from the point of view of the navbar. Can have repetition in the numbers, for parent-child hierarchies.
 nav_order: 1
 
 # Let exclude the page from the navbar
-nav_exclude: false
+nav_exclude: true
 
-# If this page represents the parent page of a section that, therefore, has children, specify it in the following way
+# Let exclude the page from the built-in search engine
+search_exclude: false
+
+#################################################################
+
+# Set "true" if this page has childrens, "false" otherwise.
 has_children: true
 
-# If this page represents the child page of a section that, therefore, has ONE parent page, specify it in the following way
-# # parent: Namespace
-
-# If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality.
-has_toc: false
-
-# If a child page has more children, add again
-# # has_children: true
-
-# To the children page(s) add
+# If this page is some page's child, specify the parent's name, otherwise comment out the option. If this page is some page's grandchild, specify grandparent's name, otherwise comment out the option.
 # # parent: NOME_PAGINA_GENITORE
 # # grand_parent: NOME_PAGINA_NONNO__GENITORE_DEL_GENITORE
 
-# Let exclude the page from the search engine (client-side)
-search_exclude: false
+# If this page is a parent page, a Table Of Contents will be automatically generated containing all related child pages. Use the option below to disable this functionality. Should always be set to "false".
+has_toc: false
+
+#################################################################
+
+# Specify the default fallback language
+disambiguation_lang: it
+
+# Specify all other available languages in which this page is available. If there's no other language in addition to "disambiguation_lang", comment out this option.
+# # availableLanguages:
+# #   - 
 ---
 
-# Index
-{: .no_toc }
-<!-- Do not add to the table of contents -->
-
----
-
-<!-- Table of contents -->
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
----
-
-## Projects
-
-Completa lista dei progetti pubblici.
-
-[Vai alla risorsa](pages/Projects){: .btn }
-
----
-
-## grn::deploy::webstatic
-
-{: .motto-title }
-> <p class="blockquote-title-fixer-purple">tl;dr</p>
->
-> Motore semplice ed intuitivo di deploy di siti web statici.
-
-[Vai alla risorsa](pages/grn-deploy-webstatic){: .btn }
-
----
-
-## Legenda delle labels
-
-Tutte le pagine web sotto il dominio `andreagrandieri.github.io` seguono una precisa legenda per l'uso delle __labels__.
-
-Un esempio di label:
-{: .d-inline-block }
-
-LABEL
-{: .label }
-
-[Vai alla risorsa](pages/Legenda-labels){: .btn }
-
----
-
-## Versioning
-
-Protocollo di versioning adottato dalle repository sotto il dominio `andreagrandieri.github.io`.
-
-[Vai alla risorsa](pages/Versioning){: .btn }
+<!-- Disambiguation Page -->
