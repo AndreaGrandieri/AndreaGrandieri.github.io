@@ -305,6 +305,9 @@ function universal404() {
       erroneus = lang[1];
 
       var newURL = window.location.href.replace(lang[1], language);
+      console.log(newURL)
+      console.log(lang[1])
+      console.log(language)
 
       // CRITICAL to ensure point 1 of (*)
       // Check if "lang[2]" is false. This means "lang" is the ending of the URL
