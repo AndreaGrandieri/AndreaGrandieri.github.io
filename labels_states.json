@@ -40,7 +40,7 @@
             "id": "grn-deploy-webstatic-label-7",
             "description": "Adapter Version",
             "state": "VERSION",
-            "content": "VERSION: A"
+            "content": "VERSION: B"
         },
         {
             "id": "grn-deploy-webstatic-label-8",
