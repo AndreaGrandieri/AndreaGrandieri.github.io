@@ -12,8 +12,7 @@ Completa lista dei progetti pubblici.
 
 ## grn::deploy::webstatic
 
-> 
->
+> >
 > Motore semplice ed intuitivo di deploy di siti web statici.
 
 [Vai alla risorsa](https://andreagrandieri.github.io/pages/it/grn-deploy-webstatic)
@@ -25,8 +24,6 @@ Completa lista dei progetti pubblici.
 Tutte le pagine web sotto il dominio `andreagrandieri.github.io` seguono una precisa legenda per l'uso delle __labels__.
 
 Un esempio di label:
-
-
 
 
 
