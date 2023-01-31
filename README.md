@@ -6,17 +6,17 @@
 
 Completa lista dei progetti pubblici.
 
-[Vai alla risorsa](https://andreagrandieri.github.io//pages/it/Projects)
+[Vai alla risorsa](https://andreagrandieri.github.io/pages/it/Projects)
 
 ---
 
 ## grn::deploy::webstatic
 
-> <p class="blockquote-title-fixer-purple">tl;dr</p>
+> 
 >
 > Motore semplice ed intuitivo di deploy di siti web statici.
 
-[Vai alla risorsa](https://andreagrandieri.github.io//pages/it/grn-deploy-webstatic)
+[Vai alla risorsa](https://andreagrandieri.github.io/pages/it/grn-deploy-webstatic)
 
 ---
 
@@ -26,13 +26,11 @@ Tutte le pagine web sotto il dominio `andreagrandieri.github.io` seguono una pre
 
 Un esempio di label:
 
-<div id="index-md-andreagrandieri-github-io-example"></div>
 
-<script type="module">
-  selfsustainable_fill_labels_state("index-md-andreagrandieri-github-io-example");
-</script>
 
-[Vai alla risorsa](https://andreagrandieri.github.io//pages/it/Legenda-labels)
+
+
+[Vai alla risorsa](https://andreagrandieri.github.io/pages/it/Legenda-labels)
 
 ---
 
@@ -40,4 +38,4 @@ Un esempio di label:
 
 Protocollo di versioning adottato dalle repository sotto il dominio `andreagrandieri.github.io`.
 
-[Vai alla risorsa](https://andreagrandieri.github.io//pages/it/Versioning)
+[Vai alla risorsa](https://andreagrandieri.github.io/pages/it/Versioning)
