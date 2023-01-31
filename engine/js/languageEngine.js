@@ -280,10 +280,10 @@ function universal404() {
         // Check if "baseurl" is empty
         if (vars_languageEngine.baseurl == "") {
           // If "baseurl" is empty, then the URL is of type: "https:/DOMAIN/pages/lang/POST". "lang" is guaranteed to be in the 3 position of the array.
-          lang = (3, urlParts[3], urlParts[4] != undefined);
+          lang = [3, urlParts[3], urlParts[4] != undefined];
         } else {
           // If "baseurl" is not empty, then the URL is of type: "https:/DOMAIN/BASEURL/pages/lang/POST". "lang" is guaranteed to be in the 4 position of the array.
-          lang = (4, urlParts[4], urlParts[5] != undefined);
+          lang = [4, urlParts[4], urlParts[5] != undefined];
         }
       } else {
         // Type 2
@@ -295,10 +295,10 @@ function universal404() {
         // Check if "baseurl" is empty
         if (vars_languageEngine.baseurl == "") {
           // If "baseurl" is empty, then the URL is of type: "https:/DOMAIN/lang/POST". "lang" is guaranteed to be in the 2 position of the array.
-          lang = (2, urlParts[2], urlParts[3] != undefined);
+          lang = [2, urlParts[2], urlParts[3] != undefined];
         } else {
           // If "baseurl" is not empty, then the URL is of type: "https:/DOMAIN/BASEURL/lang/POST". "lang" is guaranteed to be in the 3 position of the array.
-          lang = (3, urlParts[3], urlParts[4] != undefined);
+          lang = [3, urlParts[3], urlParts[4] != undefined];
         }
       }
 
