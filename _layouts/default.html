@@ -333,12 +333,12 @@ layout: table_wrappers
   <!-- FOR SOME REASON OF AUTO-RESTILYING AND INLINING DO NOT USE COMMENTS "//" INSIDE <script> BECAUSE THEY WILL MESS UP THINGS LEADING TO CONSIDERING COMMENTS ALSO CODE THAT SHOULDN'T! -->
   <script type="module">
     if (isDisambiguationPage()) {
-      // // // var content = {{ page.disambiguation_lang | jsonify }};
-      // // // var content2 = {{ page.availableLanguages | jsonify }};
+      var content = {{ page.disambiguation_lang | jsonify }};
+      var content2 = {{ page.availableLanguages | jsonify }};
 
-      // // // assignVariable_disambiguationLang(content);
-      // // // assignVariable_availableLanguagesArray(content2);
-      // // // syncLanguage();
+      assignVariable_disambiguationLang(content);
+      assignVariable_availableLanguagesArray(content2);
+      syncLanguage();
     } else {
       var content = Array({{ page.lang | jsonify }}).concat({{ page.availableLanguages | jsonify }});
 
