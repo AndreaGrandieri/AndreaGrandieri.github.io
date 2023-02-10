@@ -14,6 +14,7 @@
 import * as CDNQuerierEngine from "./CDNQuerierEngine.js";
 import * as globalShared from "./globalShared.js";
 import { availableLanguagesArray } from "./languageEngine.js";
+import * as SimpleMutex from "./SimpleMutex.js";
 import { baseurl } from "./vars_languageEngine.js";
 import * as vars_universalBroadcast from "./vars_universalBroadcast.js";
 
