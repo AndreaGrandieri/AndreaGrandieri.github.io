@@ -65,11 +65,17 @@ async function broadcastNews() {
                 // Parse the date in "birthday". Example format: "1.Jan.2021"
                 var date = new Date(news.news[i].birthday);
 
+                console.log(date)
+
                 // Add to "date" the "TTL"; the "TTL" is in # of hours
                 date.setHours(date.getHours() + news.news[i].TTL);
 
+                console.log(date)
+
                 // Get the current date
                 var currentDate = new Date();
+
+                console.log(date <= currentDate)
 
                 // Check if "date" falls after "currentDate": if so, the news SHOULD NOT be displayed
                 if (date <= currentDate) {
