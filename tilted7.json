@@ -1,0 +1,14 @@
+{
+    "news": [
+        {
+            "validityURL": "https://andreagrandieri.github.io",
+            "birthday": "11.Feb.2023",
+            "TTL": "24",
+            "callout_level": "warning",
+            "title": null,
+            "content": "Hello Content",
+            "lang": ["it"],
+            "perfectMatch": false
+        }
+    ]
+}
