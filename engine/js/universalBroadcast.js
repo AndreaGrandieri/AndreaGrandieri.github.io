@@ -124,10 +124,12 @@ async function broadcastNews() {
                     }
 
                     // Open the "p" tag and append the content to "toInject"
-                    toInject += "<p>" + news.news[i].content;
+                    toInject += "<p>" + news.news[i].content + "</p>";
 
                     // Close "blockquote"
                     toInject += "</blockquote>";
+
+                    console.log(toInject)
 
                     // "toInject" is now ready to be injected into the DOM. Inject in the div with id "broadcastTarget_universalBroadcast"
                     document.getElementById("broadcastTarget_universalBroadcast").innerHTML = toInject;
