@@ -86,7 +86,7 @@ async function getNewsSchemaFromCDN() {
   }
 }
 
-function compileBroadcastPayload() {
+function compileBroadcastPayload(i) {
   // Parse the date in "birthday". Example format: "1.Jan.2021"
   var date = new Date(news.news[i].birthday);
 
@@ -148,25 +148,30 @@ async function broadcastNews() {
         news.news[i].validityURL == window.location.href.replace(".html", "")
       ) {
         // Append to "toInject" the result of "compileBroadcastPayload"
-        toInject += compileBroadcastPayload();
+        toInject += compileBroadcastPayload(i);
 
         continue;
       }
 
       // Check the "validityURL" of the news: check if the URL is the base URL of the website.
       // Check if the "validityURL" is a substring of the current URL of the page
-      if (window.location.origin + ("/" + baseurl ? baseurl != "" : "") == news.news[i].validityURL) {
+      if (
+        window.location.origin + ("/" + baseurl ? baseurl != "" : "") ==
+        news.news[i].validityURL
+      ) {
         // Append to "toInject" the result of "compileBroadcastPayload"
-        toInject += compileBroadcastPayload();
+        toInject += compileBroadcastPayload(i);
       }
     }
 
-    // Append br tag to "toInject"
-    toInject += "<br>";
+    if (toInject != "" && toInject != null && toInject != undefined) {
+      // Append br tag to "toInject"
+      toInject += "<br>";
 
-    // "toInject" is now ready to be injected into the DOM. Inject in the div with id "broadcastTarget_universalBroadcast"
-    document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
-      toInject;
+      // "toInject" is now ready to be injected into the DOM. Inject in the div with id "broadcastTarget_universalBroadcast"
+      document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
+        toInject;
+    }
   } catch (e) {
     console.log(e);
 
