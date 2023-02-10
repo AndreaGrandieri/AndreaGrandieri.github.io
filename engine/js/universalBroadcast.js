@@ -164,6 +164,8 @@ async function broadcastNews() {
       }
     }
 
+    console.log(toInject)
+
     if (toInject != "" && toInject != null && toInject != undefined) {
       // Append br tag to "toInject"
       toInject += "<br>";
