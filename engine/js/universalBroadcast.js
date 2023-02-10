@@ -113,8 +113,7 @@ async function compileBroadcastPayload(i) {
     } catch (e) {
       // Internal error not to be broadcasted.
       globalShared.toggle_engine_SimpleMutex_inErrorState();
-      reject(e);
-      return;
+      throw new Error(e);
     }
 
     // Check if the language of the page is in the "lang" array of the news: if so, the news SHOULD be displayed. The news should also be displayed if the "lang" array is empty
