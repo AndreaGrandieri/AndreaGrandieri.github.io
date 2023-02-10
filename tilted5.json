@@ -4,9 +4,10 @@
             "validityURL": "https://andreagrandieri.github.io/pages/it/grn-deploy-webstatic",
             "birthday": "11.Feb.2023",
             "TTL": "24",
-            "callout_level": "warning_title",
-            "title": "Hello Title",
-            "content": "Hello Content"
+            "callout_level": "warning",
+            "title": null,
+            "content": "Hello Content",
+            "lang": ["it"]
         }
     ]
 }
