@@ -113,6 +113,7 @@ async function compileBroadcastPayload(i) {
     } catch (e) {
       // Internal error not to be broadcasted.
       globalShared.toggle_engine_SimpleMutex_inErrorState();
+      reject(e);
       return;
     }
 
@@ -147,11 +148,13 @@ async function compileBroadcastPayload(i) {
       // Close "blockquote"
       toInject += "</blockquote>";
 
-      return toInject;
+      resolve(toInject);
+      return;
     }
   }
 
-  return "";
+  resolve("");
+  return;
 }
 
 // Broadcast the news
