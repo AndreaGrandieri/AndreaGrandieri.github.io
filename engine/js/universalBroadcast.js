@@ -168,6 +168,8 @@ async function broadcastNews() {
     document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
       toInject;
   } catch (e) {
+    console.log(e);
+
     // Error. Handling:
     globalShared.toggle_engine_fetching_inErrorState();
     return;
