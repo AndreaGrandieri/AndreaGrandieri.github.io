@@ -1,0 +1,44 @@
+{
+    "callout_levels": [
+        {
+            "callout_level": "motto_title",
+            "content": "{: .motto-title }<br><p class='blockquote-title-fixer-purple'>"
+        },
+        {
+            "callout_level": "warning",
+            "content": "{: .warning }"
+        },
+        {
+            "callout_level": "warning_title",
+            "content": "{: .warning-title }<br><p>"
+        },
+        {
+            "callout_level": "note_title",
+            "content": "{: .note-title }<br><p class='blockquote-title-fixer-blue'>"
+        },
+        {
+            "callout_level": "critical-warning",
+            "content": "{: .critical-warning }"
+        },
+        {
+            "callout_level": "critical-warning_title",
+            "content": "{: .critical-warning-title }<br><p>"
+        },
+        {
+            "callout_level": "generic-purpose-highlighting-grey-lt",
+            "content": "{: .generic-purpose-highlighting-grey-lt }"
+        },
+        {
+            "callout_level": "generic-purpose-highlighting-grey-lt_title",
+            "content": "{: .generic-purpose-highlighting-grey-lt-title }<br><p>"
+        },
+        {
+            "callout_level": "generic-purpose-highlighting-grey-dk_title",
+            "content": "{: .generic-purpose-highlighting-grey-dk-title }<br><p class='blockquote-title-fixer-grey-dk'>"
+        },
+        {
+            "callout_level": "generic-purpose-highlighting-green_title",
+            "content": "{: .generic-purpose-highlighting-green-title }<br><p class='blockquote-title-fixer-green'>"
+        }
+    ]
+}
