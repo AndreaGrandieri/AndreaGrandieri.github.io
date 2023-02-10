@@ -148,13 +148,11 @@ async function compileBroadcastPayload(i) {
       // Close "blockquote"
       toInject += "</blockquote>";
 
-      resolve(toInject);
-      return;
+      return toInject;
     }
   }
 
-  resolve("");
-  return;
+  return "";
 }
 
 // Broadcast the news
@@ -176,7 +174,7 @@ async function broadcastNews() {
         news.news[i].validityURL == window.location.href.replace(".html", "")
       ) {
         // Append to "toInject" the result of "compileBroadcastPayload"
-        toInject += compileBroadcastPayload(i);
+        toInject += await compileBroadcastPayload(i);
 
         continue;
       }
@@ -191,7 +189,7 @@ async function broadcastNews() {
         news.news[i].validityURL
       ) {
         // Append to "toInject" the result of "compileBroadcastPayload"
-        toInject += compileBroadcastPayload(i);
+        toInject += await compileBroadcastPayload(i);
       }
     }
 
