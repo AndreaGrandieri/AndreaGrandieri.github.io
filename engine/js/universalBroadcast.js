@@ -112,6 +112,7 @@ async function broadcastNews() {
                     // From "newsSchema", get the "content" based on "callout_level" from "news"
                     for (var j = 0; j < newsSchema.callout_levels.length; j++) {
                         if (newsSchema.callout_levels[j].callout_level == news.news[i].callout_level) {
+                            console.log("FOUND")
                             toInject += newsSchema.callout_levels[j].content;
                             break;
                         }
