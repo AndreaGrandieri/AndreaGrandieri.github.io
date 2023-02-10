@@ -35,15 +35,18 @@ var news = null;
 
 // Query the CDN for news to be broadcasted
 async function getNewsFromCDN() {
-    try {
-        // "queryCDN" uses "JSON.parse" already
-        await CDNQuerierEngine.queryCDN(vars_universalBroadcast.news, function (data) {
-            news = data;
-        });
-    } catch (e) {
-        // Error. Handling:
-        globalShared.toggle_engine_fetching_inErrorState();
-        return;
+    // Check if "news" is not null or undefined: if so, the news have already been fetched and there is no need to fetch them again
+    if (news == null || news == undefined) {
+        try {
+            // "queryCDN" uses "JSON.parse" already
+            await CDNQuerierEngine.queryCDN(vars_universalBroadcast.news, function (data) {
+                news = data;
+            });
+        } catch (e) {
+            // Error. Handling:
+            globalShared.toggle_engine_fetching_inErrorState();
+            return;
+        }
     }
 }
 globalThis.getNewsFromCDN = getNewsFromCDN;
@@ -57,12 +60,6 @@ async function broadcastNews() {
         // Now, "news" contains all the news to be broadcasted.
         // Traverse all the news following the format above
         for (var i = 0; i < news.news.length; i++) {
-            // Check the "validityURL" of the news: check if the URL is the base URL of the website.
-            // Check if the "validityURL" is a substring of the current URL of the page
-            if (window.location.href.includes(news.news[i].validityURL)) {
-                console.log("ORIGIIIIIIN");
-            }
-
             // Check the "validityURL" of the news: the news should only be displayed if "validityURL" matches the current URL of the page
             if (news.news[i].validityURL == window.location.href) {
                 // Parse the date in "birthday". Example format: "1.Jan.2021"
@@ -80,7 +77,15 @@ async function broadcastNews() {
                     console.log(news.news[i].title);
                     console.log(news.news[i].content);
                 }
+
+                continue;
             }
+
+            // Check the "validityURL" of the news: check if the URL is the base URL of the website.
+            // Check if the "validityURL" is a substring of the current URL of the page
+            if (window.location.href.includes(news.news[i].validityURL)) {
+                console.log("ORIGIIIIIIN");
+            }            
         }
     } catch (e) {
         // Error. Handling:
