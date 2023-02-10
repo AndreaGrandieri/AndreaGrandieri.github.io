@@ -29,7 +29,8 @@ import * as vars_universalBroadcast from "./vars_universalBroadcast.js";
             "callout_level": "",
             "title": "",
             "content": "",
-            "lang": []
+            "lang": [],
+            "perfectMatch": true
         }
     ]
 }
@@ -179,17 +180,22 @@ async function broadcastNews() {
         continue;
       }
 
-      // Check the "validityURL" of the news: check if the URL is the base URL of the website.
-      // Check if the "validityURL" is a substring of the current URL of the page
-      if (
-        window.location.origin +
-          ("/" + baseurl
-            ? baseurl != "" && baseurl != null && baseurl != undefined
-            : "") ==
-        news.news[i].validityURL
-      ) {
-        // Append to "toInject" the result of "compileBroadcastPayload"
-        toInject += await compileBroadcastPayload(i);
+      // Get "perfectMatch" from "news"
+      var perfectMatch = news.news[i].perfectMatch;
+
+      if (perfectMatch == false) {
+        // Check the "validityURL" of the news: check if the URL is the base URL of the website.
+        // Check if the "validityURL" is a substring of the current URL of the page
+        if (
+          window.location.origin +
+            ("/" + baseurl
+              ? baseurl != "" && baseurl != null && baseurl != undefined
+              : "") ==
+          news.news[i].validityURL
+        ) {
+          // Append to "toInject" the result of "compileBroadcastPayload"
+          toInject += await compileBroadcastPayload(i);
+        }
       }
     }
 
