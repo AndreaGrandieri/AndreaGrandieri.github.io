@@ -65,20 +65,14 @@ async function broadcastNews() {
                 // Parse the date in "birthday". Example format: "1.Jan.2021"
                 var date = new Date(news.news[i].birthday);
 
-                console.log(date)
-
                 // Add to "date" the "TTL"; the "TTL" is in # of hours
                 date.setHours(date.getHours() + news.news[i].TTL);
-
-                console.log(date)
 
                 // Get the current date
                 var currentDate = new Date();
 
-                console.log(date <= currentDate)
-
                 // Check if "date" falls after "currentDate": if so, the news SHOULD NOT be displayed
-                if (date <= currentDate) {
+                if (currentDate <= date) {
                     // News to be displayed
                     console.log(news.news[i].title);
                     console.log(news.news[i].content);
@@ -89,9 +83,9 @@ async function broadcastNews() {
 
             // Check the "validityURL" of the news: check if the URL is the base URL of the website.
             // Check if the "validityURL" is a substring of the current URL of the page
-            if (window.location.href.includes(news.news[i].validityURL)) {
-                console.log("ORIGIIIIIIN");
-            }            
+            if (news.news[i].validityURL.includes(window.location.href)) {
+                console.log("ORIGIIIIIIN");           
+            }
         }
     } catch (e) {
         // Error. Handling:
