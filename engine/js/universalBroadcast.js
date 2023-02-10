@@ -13,6 +13,7 @@
 
 import * as CDNQuerierEngine from "./CDNQuerierEngine.js";
 import * as globalShared from "./globalShared.js";
+import { availableLanguagesArray } from "./languageEngine.js";
 import { baseurl } from "./vars_languageEngine.js";
 import * as vars_universalBroadcast from "./vars_universalBroadcast.js";
 
@@ -26,7 +27,8 @@ import * as vars_universalBroadcast from "./vars_universalBroadcast.js";
             "TTL": "",
             "callout_level": "",
             "title": "",
-            "content": ""
+            "content": "",
+            "lang": []
         }
     ]
 }
@@ -86,7 +88,7 @@ async function getNewsSchemaFromCDN() {
   }
 }
 
-function compileBroadcastPayload(i) {
+async function compileBroadcastPayload(i) {
   // Parse the date in "birthday". Example format: "1.Jan.2021"
   var date = new Date(news.news[i].birthday);
 
@@ -98,32 +100,55 @@ function compileBroadcastPayload(i) {
 
   // Check if "date" falls after "currentDate": if so, the news SHOULD NOT be displayed
   if (currentDate <= date) {
-    // News to be displayed
-    var toInject = "";
+    // Get the language of the page
+    // Should wait for the language engine to have completed the compilation of "availableLanguagesArray"
+    try {
+      await SimpleMutex.activeWaitEvent(function () {
+        // Return false if "availableLanguagesArray" is null or undefined, otherwise return true
+        return (
+          availableLanguagesArray != null &&
+          availableLanguagesArray != undefined
+        );
+      }, 250);
+    } catch (e) {
+      // Internal error not to be broadcasted.
+      globalShared.toggle_engine_SimpleMutex_inErrorState();
+      return;
+    }
 
-    // From "newsSchema", get the "content" based on "callout_level" from "news"
-    for (var j = 0; j < newsSchema.callout_levels.length; j++) {
-      if (
-        newsSchema.callout_levels[j].callout_level == news.news[i].callout_level
-      ) {
-        toInject += newsSchema.callout_levels[j].content;
-        break;
+    // Check if the language of the page is in the "lang" array of the news: if so, the news SHOULD be displayed. The news should also be displayed if the "lang" array is empty
+    if (
+      news.news[i].lang.length == 0 ||
+      news.news[i].lang.includes(availableLanguagesArray[0])
+    ) {
+      // News to be displayed
+      var toInject = "";
+
+      // From "newsSchema", get the "content" based on "callout_level" from "news"
+      for (var j = 0; j < newsSchema.callout_levels.length; j++) {
+        if (
+          newsSchema.callout_levels[j].callout_level ==
+          news.news[i].callout_level
+        ) {
+          toInject += newsSchema.callout_levels[j].content;
+          break;
+        }
       }
+
+      // A title is present if "title" is not null or undefined
+      if (news.news[i].title != null && news.news[i].title != undefined) {
+        // Append the title to "toInject", the close the "p" tag
+        toInject += news.news[i].title + "</p>";
+      }
+
+      // Open the "p" tag and append the content to "toInject"
+      toInject += "<p>" + news.news[i].content + "</p>";
+
+      // Close "blockquote"
+      toInject += "</blockquote>";
+
+      return toInject;
     }
-
-    // A title is present if "title" is not null or undefined
-    if (news.news[i].title != null && news.news[i].title != undefined) {
-      // Append the title to "toInject", the close the "p" tag
-      toInject += news.news[i].title + "</p>";
-    }
-
-    // Open the "p" tag and append the content to "toInject"
-    toInject += "<p>" + news.news[i].content + "</p>";
-
-    // Close "blockquote"
-    toInject += "</blockquote>";
-
-    return toInject;
   }
 
   return "";
@@ -156,15 +181,16 @@ async function broadcastNews() {
       // Check the "validityURL" of the news: check if the URL is the base URL of the website.
       // Check if the "validityURL" is a substring of the current URL of the page
       if (
-        window.location.origin + ("/" + baseurl ? baseurl != "" : "") ==
+        window.location.origin +
+          ("/" + baseurl
+            ? baseurl != "" && baseurl != null && baseurl != undefined
+            : "") ==
         news.news[i].validityURL
       ) {
         // Append to "toInject" the result of "compileBroadcastPayload"
         toInject += compileBroadcastPayload(i);
       }
     }
-
-    console.log(toInject)
 
     if (toInject != "" && toInject != null && toInject != undefined) {
       // Append br tag to "toInject"
