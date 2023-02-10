@@ -184,6 +184,13 @@ async function broadcastNews() {
       var perfectMatch = news.news[i].perfectMatch;
 
       if (perfectMatch == false) {
+        console.log(
+          window.location.origin +
+            ("/" + baseurl
+              ? baseurl != "" && baseurl != null && baseurl != undefined
+              : "")
+        );
+
         // Check the "validityURL" of the news: check if the URL is the base URL of the website.
         // Check if the "validityURL" is a substring of the current URL of the page
         if (
