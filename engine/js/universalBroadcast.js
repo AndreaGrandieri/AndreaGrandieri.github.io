@@ -165,7 +165,7 @@ async function broadcastNews() {
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
 
-    window.alert(newsObj.news)
+    window.alert(newsObj.news == null);
 
     // Now, "news" contains all the news to be broadcasted.
     // Traverse all the news following the format above
