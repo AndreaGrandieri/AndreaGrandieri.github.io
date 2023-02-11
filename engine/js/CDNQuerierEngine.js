@@ -21,11 +21,11 @@ export function queryCDN(url, callback) {
     // Query the CDN at the given URL. Expect the URL to point to a JSON file.
     // When the query is complete, call the callback function with the JSON
     // object as the argument.
-    try {
+
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
       xhr.onreadystatechange = function () {
-        try {
+
           if (xhr.readyState == 4) {
             var data = JSON.parse(xhr.responseText);
             callback(data);
@@ -33,18 +33,10 @@ export function queryCDN(url, callback) {
             resolve();
             return;
           }
-        } catch (e) {
-          // Error. Handling:
-          reject(e);
-          return;
-        }
+
       };
       xhr.send();
-    } catch (e) {
-      // Error. Handling:
-      reject(e);
-      return;
-    }
+
   });
 }
 
@@ -54,29 +46,21 @@ export function queryCDNOnlyHTTPResponseCode(url, callback) {
     // Query the CDN at the given URL. Expect the URL to point to a JSON file.
     // When the query is complete, call the callback function with the JSON
     // object as the argument.
-    try {
+
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
       xhr.onreadystatechange = function () {
-        try {
+        
           if (xhr.readyState == 4) {
             callback(xhr.status);
 
             resolve();
             return;
           }
-        } catch (e) {
-          // Error. Handling:
-          reject(e);
-          return;
-        }
+  
       };
       xhr.send();
-    } catch (e) {
-      // Error. Handling:
-      reject(e);
-      return;
-    }
+
   });
 }
 
@@ -113,14 +97,9 @@ function queryCDN_map_labels_states() {
       }
 
       // Query the CDN. Manage a possible exception
-      try {
+   
         await queryCDN(url, callback);
-      } catch (e) {
-        // Error. Handling:
-        globalShared.toggle_engine_fetching_inErrorState();
-        reject(e);
-        return;
-      }
+
     }
 
     resolve();
@@ -161,14 +140,9 @@ function queryCDN_labels_states() {
       }
 
       // Query the CDN
-      try {
+    
         await queryCDN(url, callback);
-      } catch (e) {
-        // Error. Handling:
-        globalShared.toggle_engine_fetching_inErrorState();
-        reject(e);
-        return;
-      }
+
     }
 
     resolve();
@@ -295,27 +269,19 @@ Note: JavaScript is single-threaded, but funtions (same and different) called wi
 // Exception handling: OK
 async function selfsustainable_fill_labels_state(id) {
   // Acquire the mutex
-  try {
+
     await SimpleMutex.acquire(
       SimpleMutex.selfsustainable_fill_labels_state_mutex,
       250
     );
-  } catch (e) {
-    // Internal error not to be broadcasted.
-    globalShared.toggle_engine_SimpleMutex_inErrorState();
-    return;
-  }
 
-  try {
+
+
     // Critical section
     await queryCDN_map_labels_states();
     await queryCDN_labels_states();
     fill_labels_state(id);
-  } catch (e) {
-    // Error. Handling:
-    globalShared.toggle_engine_fetching_inErrorState();
-    return;
-  }
+
 
   // Release the mutex
   SimpleMutex.release(SimpleMutex.selfsustainable_fill_labels_state_mutex);

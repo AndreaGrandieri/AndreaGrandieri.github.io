@@ -1,5 +1,4 @@
 import * as CDNQuerierEngine from "./CDNQuerierEngine.js";
-import * as globalShared from "./globalShared.js";
 import * as vars_languageEngine from "./vars_languageEngine.js";
 
 /////////////////////////////////////////////////////////////////
@@ -211,7 +210,7 @@ async function compile_poweredbyahref() {
   var referenceLink = "";
 
   // Check if the current language is supported by the reference link. To do this, a CDN link stored in the following variable is queried.
-  try {
+
     await CDNQuerierEngine.queryCDN(
       vars_languageEngine.linkToQuery,
       function (response) {
@@ -224,11 +223,7 @@ async function compile_poweredbyahref() {
         supportedLanguages_poweredbyahref = response.supportedLanguages;
       }
     );
-  } catch (e) {
-    // Error. Handling:
-    globalShared.toggle_engine_fetching_inErrorState();
-    return;
-  }
+
 
   // Check if the currentLanguage is in the array "supportedLanguages_poweredbyahref"
   if (supportedLanguages_poweredbyahref.indexOf(currentLanguage) > -1) {
@@ -339,19 +334,14 @@ function universal404() {
         );
 
         // Query the new URL expecting a 200 response
-        try {
+       
         await CDNQuerierEngine.queryCDNOnlyHTTPResponseCode(
           newURL,
           function (response) {
             response_out = response;
           }
         );
-        } catch (e) {
-          // Error. Handling:
-          globalShared.toggle_engine_fetching_inErrorState();
-          reject(e);    
-          return;    
-        }
+
 
         // Check the response
         if (response_out == 200) {
@@ -371,13 +361,9 @@ async function compile_universal404() {
   if (document.getElementById("compile_universal404_target") != null) {
     // Compile "exists_in" calling the function "universal404"
     // Note that "universal404" returns a "Promise": if not called with the "await" keyword, there won't be waiting for the function to complete its execution: I may work on an unfinished version of "exists_in" array!
-    try {
+   
       await universal404();
-    } catch (e) {
-      // Error. Handling:
-      globalShared.toggle_engine_fetching_inErrorState();
-      return;
-    }
+
 
     // Now "exists_in" contains the list of languages in which the page exists. Compile the table.
     if (exists_in.length > 0) {

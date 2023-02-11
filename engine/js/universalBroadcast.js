@@ -12,7 +12,6 @@
 // This is a module. The globalThis export is used. The globalThis export can also be used with variables.
 
 import * as CDNQuerierEngine from "./CDNQuerierEngine.js";
-import * as globalShared from "./globalShared.js";
 import { availableLanguagesArray } from "./languageEngine.js";
 import * as SimpleMutex from "./SimpleMutex.js";
 import { baseurl } from "./vars_languageEngine.js";
@@ -55,7 +54,7 @@ var newsSchema = null;
 async function getNewsFromCDN() {
   // Check if "news" is not null or undefined: if so, the news have already been fetched and there is no need to fetch them again
   if (newsObj == null || newsObj == undefined) {
-    try {
+    
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
         vars_universalBroadcast.news,
@@ -63,18 +62,14 @@ async function getNewsFromCDN() {
           newsObj = data;
         }
       );
-    } catch (e) {
-      // Error. Handling:
-      globalShared.toggle_engine_fetching_inErrorState();
-      return;
-    }
+
   }
 }
 
 async function getNewsSchemaFromCDN() {
   // Check if "newsSchema" is not null or undefined: if so, the news schema have already been fetched and there is no need to fetch them again
   if (newsSchema == null || newsSchema == undefined) {
-    try {
+   
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
         vars_universalBroadcast.newsSchema,
@@ -82,11 +77,7 @@ async function getNewsSchemaFromCDN() {
           newsSchema = data;
         }
       );
-    } catch (e) {
-      // Error. Handling:
-      globalShared.toggle_engine_fetching_inErrorState();
-      return;
-    }
+
   }
 }
 
@@ -104,7 +95,7 @@ async function compileBroadcastPayload(i) {
   if (currentDate <= date) {
     // Get the language of the page
     // Should wait for the language engine to have completed the compilation of "availableLanguagesArray"
-    try {
+    
       await SimpleMutex.activeWaitEvent(function () {
         // Return false if "availableLanguagesArray" is null or undefined, otherwise return true
         return (
@@ -112,11 +103,7 @@ async function compileBroadcastPayload(i) {
           availableLanguagesArray != undefined
         );
       }, 250);
-    } catch (e) {
-      // Internal error not to be broadcasted.
-      globalShared.toggle_engine_SimpleMutex_inErrorState();
-      throw new Error(e);
-    }
+
 
     // Check if the language of the page is in the "lang" array of the news: if so, the news SHOULD be displayed. The news should also be displayed if the "lang" array is empty
     if (
@@ -156,82 +143,14 @@ async function compileBroadcastPayload(i) {
   return "";
 }
 
-// // // // Broadcast the news
-// // // async function broadcastNews() {
-// // //   var toInject = "";
-
-// // //   // First of all, get the news and the schema
-// // //   try {
-// // //     await getNewsSchemaFromCDN();
-// // //     await getNewsFromCDN();
-
-// // //     // window.alert(newsObj.toString());
-// // //     console.log(newsObj.news[0].content);
-
-// // //     // Now, "news" contains all the news to be broadcasted.
-// // //     // Traverse all the news following the format above
-// // //     for (var i = 0; i < newsObj.news.length; i++) {
-// // //       // Check the "validityURL" of the news: the news should only be displayed if "validityURL" matches the current URL of the page
-
-// // //       // Check if the "validityURL" is the current URL of the page, regardless of the presence of ".html" at the end of the URL of the current page
-// // //       if (
-// // //         newsObj.news[i].validityURL == window.location.href.replace(".html", "")
-// // //       ) {
-// // //         // Append to "toInject" the result of "compileBroadcastPayload"
-// // //         toInject += await compileBroadcastPayload(i);
-
-// // //         continue;
-// // //       }
-
-// // //       // Get "perfectMatch" from "news"
-// // //       var perfectMatch = newsObj.news[i].perfectMatch;
-
-// // //       if (perfectMatch == false) {
-// // //         var origin =
-// // //           baseurl != "" && baseurl != null && baseurl != undefined
-// // //             ? window.location.origin + ("/" + baseurl)
-// // //             : window.location.origin + "";
-
-// // //         // Check the "validityURL" of the news: check if the URL is the base URL of the website.
-// // //         // Check if the "validityURL" is a substring of the current URL of the page
-// // //         if (origin == newsObj.news[i].validityURL) {
-// // //           // Append to "toInject" the result of "compileBroadcastPayload"
-// // //           toInject += await compileBroadcastPayload(i);
-// // //         }
-// // //       }
-// // //     }
-
-// // //     if (toInject != "" && toInject != null && toInject != undefined) {
-// // //       // Append br tag to "toInject"
-// // //       toInject += "<br>";
-
-// // //       // "toInject" is now ready to be injected into the DOM. Inject in the div with id "broadcastTarget_universalBroadcast"
-// // //       document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
-// // //         toInject;
-// // //     }
-// // //   } catch (e) {
-// // //     console.log(e);
-
-// // //     // Error. Handling:
-// // //     globalShared.toggle_engine_fetching_inErrorState();
-// // //     return;
-// // //   }
-// // // }
-// // // globalThis.broadcastNews = broadcastNews;
-
 // Broadcast the news
 async function broadcastNews() {
   var toInject = "";
 
   // First of all, get the news and the schema
-  try {
+  
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
-  } catch (e) {
-    // Niente
-  } finally {
-    // window.alert(newsObj.toString());
-    console.log(newsObj.news[0].content);
 
     // Now, "news" contains all the news to be broadcasted.
     // Traverse all the news following the format above
@@ -274,6 +193,6 @@ async function broadcastNews() {
       document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
         toInject;
     }
-  }
+
 }
 globalThis.broadcastNews = broadcastNews;
