@@ -55,7 +55,7 @@ var newsSchema = null;
 async function getNewsFromCDN() {
   // Check if "news" is not null or undefined: if so, the news have already been fetched and there is no need to fetch them again
   if (newsObj == null || newsObj == undefined) {
-    // // try {
+    try {
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
         vars_universalBroadcast.news,
@@ -63,18 +63,18 @@ async function getNewsFromCDN() {
           newsObj = data;
         }
       );
-    // // } catch (e) {
-    // //   // Error. Handling:
-    // //   globalShared.toggle_engine_fetching_inErrorState();
-    // //   return;
-    // // }
+    } catch (e) {
+      // Error. Handling:
+      globalShared.toggle_engine_fetching_inErrorState();
+      return;
+    }
   }
 }
 
 async function getNewsSchemaFromCDN() {
   // Check if "newsSchema" is not null or undefined: if so, the news schema have already been fetched and there is no need to fetch them again
   if (newsSchema == null || newsSchema == undefined) {
-    // // try {
+    try {
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
         vars_universalBroadcast.newsSchema,
@@ -82,11 +82,11 @@ async function getNewsSchemaFromCDN() {
           newsSchema = data;
         }
       );
-    // // } catch (e) {
-    // //   // Error. Handling:
-    // //   globalShared.toggle_engine_fetching_inErrorState();
-    // //   return;
-    // // }
+    } catch (e) {
+      // Error. Handling:
+      globalShared.toggle_engine_fetching_inErrorState();
+      return;
+    }
   }
 }
 
@@ -161,11 +161,11 @@ async function broadcastNews() {
   var toInject = "";
 
   // First of all, get the news and the schema
-  // // try {
+  try {
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
 
-    window.alert(newsObj.news == null);
+    window.alert(newsObj.toString());
 
     // Now, "news" contains all the news to be broadcasted.
     // Traverse all the news following the format above
@@ -208,12 +208,12 @@ async function broadcastNews() {
       document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
         toInject;
     }
-  // // } catch (e) {
-  // //   console.log(e);
+  } catch (e) {
+    console.log(e);
 
-  // //   // Error. Handling:
-  // //   globalShared.toggle_engine_fetching_inErrorState();
-  // //   return;
-  // // }
+    // Error. Handling:
+    globalShared.toggle_engine_fetching_inErrorState();
+    return;
+  }
 }
 globalThis.broadcastNews = broadcastNews;
