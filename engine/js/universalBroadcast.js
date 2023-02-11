@@ -177,6 +177,9 @@ async function broadcastNews() {
   try {
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
+    
+    console.log(newsObj);
+    console.log(newsSchema);
 
     // Now, "news" contains all the news to be broadcasted.
     // Traverse all the news following the format above
