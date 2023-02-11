@@ -62,7 +62,7 @@ async function getNewsFromCDN() {
             for (var i = 0; i < vars_universalBroadcast.news.length; i++) {
                 // "queryCDN" uses "JSON.parse" already
                 await CDNQuerierEngine.queryCDN(
-                    vars_universalBroadcast.news,
+                    vars_universalBroadcast.news[i],
                     function (data) {
                         // Append "data" to "newsObj"
                         newsObj.push(data);
@@ -87,7 +87,7 @@ async function getNewsSchemaFromCDN() {
             for (var i = 0; i < vars_universalBroadcast.newsSchema.length; i++) {
                 // "queryCDN" uses "JSON.parse" already
                 await CDNQuerierEngine.queryCDN(
-                    vars_universalBroadcast.newsSchema,
+                    vars_universalBroadcast.newsSchema[i],
                     function (data) {
                         // Append "data" to "newsSchema"
                         newsSchema.push(data);
