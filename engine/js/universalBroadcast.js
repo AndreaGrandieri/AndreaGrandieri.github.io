@@ -144,7 +144,7 @@ async function compileBroadcastPayload(i, z) {
             toInject += newsSchema[w].callout_levels[j].content;
 
             // Break all the loops
-            w = newsSchema.length;
+            w = newsSchema.length - 1;
             j = newsSchema[w].callout_levels.length;
           }
         }
@@ -177,7 +177,7 @@ async function broadcastNews() {
   try {
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
-    
+
     console.log(newsObj);
     console.log(newsSchema);
 
