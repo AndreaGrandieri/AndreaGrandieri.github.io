@@ -166,8 +166,7 @@ async function broadcastNews() {
     await getNewsFromCDN();
 
     // window.alert(newsObj.toString());
-    console.log(newsObj.news.toString());
-    console.log(newsObj.news);
+    console.log(newsObj.news[0].content);
 
     // Now, "news" contains all the news to be broadcasted.
     // Traverse all the news following the format above
