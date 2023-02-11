@@ -161,9 +161,11 @@ async function broadcastNews() {
   var toInject = "";
 
   // First of all, get the news and the schema
-  // // try {
+  try {
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
+
+    window.alert(newsObj)
 
     // Now, "news" contains all the news to be broadcasted.
     // Traverse all the news following the format above
@@ -206,12 +208,12 @@ async function broadcastNews() {
       document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
         toInject;
     }
-  // // } catch (e) {
-  // //   console.log(e);
+  } catch (e) {
+    console.log(e);
 
-  // //   // Error. Handling:
-  // //   globalShared.toggle_engine_fetching_inErrorState();
-  // //   return;
-  // // }
+    // Error. Handling:
+    globalShared.toggle_engine_fetching_inErrorState();
+    return;
+  }
 }
 globalThis.broadcastNews = broadcastNews;
