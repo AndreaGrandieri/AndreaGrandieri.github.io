@@ -30,14 +30,18 @@ export async function act_engine_fetching_inErrorState() {
   // Display on the page a warning message. To be done iff it has not been done yet.
 
   // Should wait for the language engine to have completed the compilation of "availableLanguagesArray"
- 
+  try {
     await SimpleMutex.activeWaitEvent(function () {
       // Return false if "availableLanguagesArray" is null or undefined, otherwise return true
       return (
         availableLanguagesArray != null && availableLanguagesArray != undefined
       );
     }, 250);
-
+  } catch (e) {
+    // Internal error not to be broadcasted.
+    globalShared.toggle_engine_SimpleMutex_inErrorState();
+    return;
+  }
 
   // Retrieve the text based on the current language. The language is stored in "availableLanguagesArray[0]" and the text is stored in "translationDictionaryFor_broadcastTarget_engine_fetching_inErrorState[availableLanguagesArray[0]]"
   var toInject =

@@ -12,6 +12,7 @@
 // This is a module. The globalThis export is used. The globalThis export can also be used with variables.
 
 import * as CDNQuerierEngine from "./CDNQuerierEngine.js";
+import * as globalShared from "./globalShared.js";
 import { availableLanguagesArray } from "./languageEngine.js";
 import * as SimpleMutex from "./SimpleMutex.js";
 import { baseurl } from "./vars_languageEngine.js";
@@ -54,7 +55,7 @@ var newsSchema = null;
 async function getNewsFromCDN() {
   // Check if "news" is not null or undefined: if so, the news have already been fetched and there is no need to fetch them again
   if (newsObj == null || newsObj == undefined) {
-    
+    try {
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
         vars_universalBroadcast.news,
@@ -62,14 +63,18 @@ async function getNewsFromCDN() {
           newsObj = data;
         }
       );
-
+    } catch (e) {
+      // Error. Handling:
+      globalShared.toggle_engine_fetching_inErrorState();
+      return;
+    }
   }
 }
 
 async function getNewsSchemaFromCDN() {
   // Check if "newsSchema" is not null or undefined: if so, the news schema have already been fetched and there is no need to fetch them again
   if (newsSchema == null || newsSchema == undefined) {
-   
+    try {
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
         vars_universalBroadcast.newsSchema,
@@ -77,7 +82,11 @@ async function getNewsSchemaFromCDN() {
           newsSchema = data;
         }
       );
-
+    } catch (e) {
+      // Error. Handling:
+      globalShared.toggle_engine_fetching_inErrorState();
+      return;
+    }
   }
 }
 
@@ -95,7 +104,7 @@ async function compileBroadcastPayload(i) {
   if (currentDate <= date) {
     // Get the language of the page
     // Should wait for the language engine to have completed the compilation of "availableLanguagesArray"
-    
+    try {
       await SimpleMutex.activeWaitEvent(function () {
         // Return false if "availableLanguagesArray" is null or undefined, otherwise return true
         return (
@@ -103,7 +112,11 @@ async function compileBroadcastPayload(i) {
           availableLanguagesArray != undefined
         );
       }, 250);
-
+    } catch (e) {
+      // Internal error not to be broadcasted.
+      globalShared.toggle_engine_SimpleMutex_inErrorState();
+      throw new Error(e);
+    }
 
     // Check if the language of the page is in the "lang" array of the news: if so, the news SHOULD be displayed. The news should also be displayed if the "lang" array is empty
     if (
@@ -148,7 +161,7 @@ async function broadcastNews() {
   var toInject = "";
 
   // First of all, get the news and the schema
-  
+  try {
     await getNewsSchemaFromCDN();
     await getNewsFromCDN();
 
@@ -193,6 +206,12 @@ async function broadcastNews() {
       document.getElementById("broadcastTarget_universalBroadcast").innerHTML =
         toInject;
     }
+  } catch (e) {
+    console.log(e);
 
+    // Error. Handling:
+    globalShared.toggle_engine_fetching_inErrorState();
+    return;
+  }
 }
 globalThis.broadcastNews = broadcastNews;
