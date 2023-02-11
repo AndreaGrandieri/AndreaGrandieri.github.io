@@ -58,7 +58,7 @@ async function getNewsFromCDN() {
     try {
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
-        vars_universalBroadcast.news,
+        vars_universalBroadcast.news[0],
         function (data) {
           newsObj = data;
         }
@@ -77,7 +77,7 @@ async function getNewsSchemaFromCDN() {
     try {
       // "queryCDN" uses "JSON.parse" already
       await CDNQuerierEngine.queryCDN(
-        vars_universalBroadcast.newsSchema,
+        vars_universalBroadcast.newsSchema[0],
         function (data) {
           newsSchema = data;
         }
