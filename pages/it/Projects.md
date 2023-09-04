@@ -85,13 +85,25 @@ lang: it
 ## RadioSvegliaGBE
 {: .d-inline-block }
 
-<div id="projects-label-3"></div>
+<div id="projects-label-1"></div>
+{: .d-inline-block }
 
 <script type="module">
-  selfsustainable_fill_labels_state("projects-label-3");
+  selfsustainable_fill_labels_state("projects-label-1");
 </script>
 
-_Pass._
+<div id="projects-label-2"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("projects-label-2");
+</script>
+
+{: .motto-title }
+> <p class="blockquote-title-fixer-purple">tl;dr</p>
+>
+> Radiosveglia multifunzione interamente realizzata "from sketch", ovvero da zero, sia nella progettazione dell'hardware, sia del software e sia del case 3D.
+
+[Vai al sito del progetto](https://andreagrandieri.github.io/RadioSvegliaGBE/it/){: .btn }
 
 ---
 
