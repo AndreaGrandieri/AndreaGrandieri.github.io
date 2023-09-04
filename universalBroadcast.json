@@ -3,7 +3,7 @@
         {
             "validityURL": "https://andreagrandieri.github.io",
             "birthday": "11.Feb.2023",
-            "TTL": "7200",
+            "TTL": "0",
             "callout_level": "note_title",
             "title": "BENVENUTO",
             "content": "Diamo il benvenuto a: <b>Universal Broadcast Service!</b>",
