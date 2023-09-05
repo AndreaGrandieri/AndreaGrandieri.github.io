@@ -127,7 +127,7 @@ _Pass._
 {: .d-inline-block }
 
 <script type="module">
-  selfsustainable_fill_labels_state("projects-label-1");
+  selfsustainable_fill_labels_state("legenda-labels-label-3");
 </script>
 
 <div id="projects-label-2"></div>
