@@ -123,13 +123,26 @@ _Pass._
 ## MMM-MD
 {: .d-inline-block }
 
-<div id="projects-label-5"></div>
+<div id="projects-label-1"></div>
+{: .d-inline-block }
 
 <script type="module">
-  selfsustainable_fill_labels_state("projects-label-5");
+  selfsustainable_fill_labels_state("projects-label-1");
 </script>
 
-_Pass._
+<div id="projects-label-2"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("projects-label-2");
+</script>
+
+{: .motto-title }
+> <p class="blockquote-title-fixer-purple">tl;dr</p>
+>
+> Write MD. Render it on the MagicMirror!
+> This module enables you to write whatever you want directly rendering it on your MagicMirror screen!
+
+[Vai al sito del progetto](https://andreagrandieri.github.io/MMM-MD/en/){: .btn }
 
 ---
 
