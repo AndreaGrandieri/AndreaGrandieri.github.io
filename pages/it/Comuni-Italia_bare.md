@@ -5,12 +5,12 @@
 layout: default
 
 # Page title. If omitted, the page will not be included in the navbar.
-title: MMM-MD
+title: Comuni-Italia
 
 #################################################################
 
 # Specifies the order of the current page from the point of view of the navbar. Can have repetition in the numbers, for parent-child hierarchies.
-nav_order: 4
+nav_order: 6
 
 # Let exclude the page from the navbar
 nav_exclude: false
@@ -39,7 +39,7 @@ lang: it
 
 # Bare: redirect page
 redirect_to:
-    - /pages/it/Projects#mmm-md
+    - /pages/it/Projects#comuni-italia
 ---
 
 <!-- Bare Page -->
