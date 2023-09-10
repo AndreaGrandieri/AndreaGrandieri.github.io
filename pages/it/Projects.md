@@ -160,13 +160,23 @@ lang: it
 ## EEPROM-Programmer
 {: .d-inline-block }
 
-<div id="projects-label-6"></div>
+<div id="projects-label-1"></div>
+{: .d-inline-block }
 
 <script type="module">
-  selfsustainable_fill_labels_state("projects-label-6");
+  selfsustainable_fill_labels_state("projects-label-1");
 </script>
 
-_Pass._
+<div id="projects-label-2"></div>
+
+<script type="module">
+  selfsustainable_fill_labels_state("projects-label-2");
+</script>
+
+{: .motto-title }
+> <p class="blockquote-title-fixer-purple">tl;dr</p>
+>
+> XML e JSON interrogabili via HTTP GET da qualsiasi applicazione per ottenere una completa lista dei comuni italiani.
 
 ---
 
