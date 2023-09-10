@@ -128,7 +128,7 @@ lang: it
 >
 > Create Direct Download Link for Onedrive given a classic sharable link.
 
-[Vai al sito del progetto](https://andreagrandieri.github.io/RadioSvegliaGBE/it/){: .btn }
+[Vai al sito del progetto](https://andreagrandieri.github.io/DirectDownloadLink-Onedrive/en/){: .btn }
 
 ---
 
@@ -190,6 +190,8 @@ _Pass._
 > <p class="blockquote-title-fixer-purple">tl;dr</p>
 >
 > XML e JSON interrogabili via HTTP GET da qualsiasi applicazione per ottenere una completa lista dei comuni italiani.
+
+[Vai al sito del progetto](https://andreagrandieri.github.io/Comuni-Italia/it/){: .btn }
 
 ---
 
