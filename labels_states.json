@@ -185,6 +185,12 @@
             "description": "Projects: Progetto Gelateria BBG",
             "state": "MISSING",
             "content": "MISSING"
+        },
+        {
+            "id": "fondamentihci-label-1",
+            "description": "Projects: FondamentiHCI",
+            "state": "VERSION",
+            "content": "VERSION: A"
         }
     ]
 }
