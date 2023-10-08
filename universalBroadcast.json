@@ -13,7 +13,7 @@
         {
             "validityURL": "https://andreagrandieri.github.io/BitEvent/it/",
             "birthday": "9.Oct.2023",
-            "TTL": "0",
+            "TTL": "1",
             "callout_level": "note_title",
             "title": "Compito 1 - Individuazione dei bisogni",
             "content": "Consegna prevista entro le 23:59 del 9.Oct.2023",
